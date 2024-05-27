@@ -21,6 +21,14 @@
         h1, h2 {
             text-align: center;
         }
+        .year-section {
+            margin: 40px 0;
+        }
+        .year-title {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 8px;
+        }
         .class {
             margin: 20px 0;
             padding: 20px;
@@ -34,21 +42,74 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .class img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .tree {
+            border-left: 2px solid #666;
+            padding-left: 20px;
+            position: relative;
+        }
+        .tree::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #666;
+        }
+        .class {
+            position: relative;
+            margin-left: 20px;
+        }
+        .class::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 20px;
+            width: 20px;
+            height: 2px;
+            background-color: #666;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>My Classes Progression</h1>
-        <div class="class-list">
-            <div class="class">
-                <h2>EA1: Linear Algebra</h2>
-                <p>Introduction to linear algebra and its applications in engineering.</p>
+        <div class="tree">
+            <div class="year-section">
+                <div class="year-title">
+                    <h2>Freshman Year</h2>
+                </div>
+                <div class="class">
+                    <h3>EA1: Linear Algebra</h3>
+                    <p>Introduction to linear algebra and its applications in engineering.</p>
+                    <img src="path/to/project1.jpg" alt="Project 1">
+                </div>
+                <div class="class">
+                    <h3>EA2: Mechanics</h3>
+                    <p>Fundamentals of mechanics including forces, motion, and energy.</p>
+                    <img src="path/to/project2.jpg" alt="Project 2">
+                </div>
             </div>
-            <div class="class">
-                <h2>EA2: Mechanics</h2>
-                <p>Fundamentals of mechanics including forces, motion, and energy.</p>
+            <div class="year-section">
+                <div class="year-title">
+                    <h2>Sophomore Year</h2>
+                </div>
+                <div class="class">
+                    <h3>EA3: Thermodynamics</h3>
+                    <p>Introduction to the principles of thermodynamics and heat transfer.</p>
+                    <img src="path/to/project3.jpg" alt="Project 3">
+                </div>
+                <div class="class">
+                    <h3>EA4: Materials Science</h3>
+                    <p>Study of material properties and their applications in engineering.</p>
+                    <img src="path/to/project4.jpg" alt="Project 4">
+                </div>
             </div>
-            <!-- Add more classes here -->
+            <!-- Add more year sections and classes as needed -->
         </div>
     </div>
     <script>
