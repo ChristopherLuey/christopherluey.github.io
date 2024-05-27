@@ -3,41 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Clean GitHub Pages Site</title>
+    <title>My Classes Progression</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #121212;
+            color: #ffffff;
         }
         .container {
-            text-align: center;
-            max-width: 600px;
+            width: 80%;
+            margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .class {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #1e1e1e;
             border-radius: 8px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
+        .class.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to My Clean GitHub Pages Site!</h1>
-        <p>This is a minimalist and clean design for my first GitHub Pages site.</p>
+        <h1>My Classes Progression</h1>
+        <div class="class-list">
+            <div class="class">
+                <h2>EA1: Linear Algebra</h2>
+                <p>Introduction to linear algebra and its applications in engineering.</p>
+            </div>
+            <div class="class">
+                <h2>EA2: Mechanics</h2>
+                <p>Fundamentals of mechanics including forces, motion, and energy.</p>
+            </div>
+            <!-- Add more classes here -->
+        </div>
     </div>
+    <script>
+        const classes = document.querySelectorAll('.class');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        classes.forEach(classItem => {
+            observer.observe(classItem);
+        });
+    </script>
 </body>
 </html>
