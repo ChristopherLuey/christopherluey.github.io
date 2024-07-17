@@ -21,8 +21,12 @@
         h1 {
             text-align: center;
         }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
         .project {
-            margin: 20px 0;
             padding: 20px;
             background-color: #1e1e1e;
             border-radius: 8px;
@@ -39,38 +43,39 @@
 </head>
 <body>
     <div class="container">
-        <h1>My Projects</h1>
-        <div class="project">
-            <h3><a href="project1.html">Lagrangian Dynamic Simulation</a></h3>
-            <p>Lagragian dynamics, simulation\nClass with Prof. Todd Murphey (Northwestern University)</p>
-            <img src="path/to/project1.jpg" alt="Project 1">
+        <h1>Christopher Luey</h1>
+        <div class="projects-grid">
+            <div class="project">
+                <h3><a href="project1.html">Lagrangian Dynamic Simulation</a></h3>
+                <p>Lagrangian dynamics, simulation<br>Class with Prof. Todd Murphey (Northwestern University)</p>
+                <img src="path/to/project1.jpg" alt="Project 1">
+            </div>
+            <div class="project">
+                <h3><a href="project2.html">Pick and Place Robotic Manipulation</a></h3>
+                <p>End-effector trajectory planning, odometry, inverse kinematics.<br>Class with Prof. Kevin Lynch (Northwestern University)</p>
+                <img src="path/to/project2.jpg" alt="Project 2">
+            </div>
+            <div class="project">
+                <h3><a href="project3.html">Research: 6D Object Pose Estimation</a></h3>
+                <p>Using RGB video to estimate YCB object poses for tele-operated robot.<br>Research with Prof. Ed Colgate (Northwestern University)</p>
+                <img src="path/to/project3.jpg" alt="Project 3">
+            </div>
+            <div class="project">
+                <h3><a href="project4.html">Research: Online Robotic Gait Control using Generative AI</a></h3>
+                <p>Using an autoencoder to learn and generate control sequences for robot walking.<br>Research with Prof. Todd Murphey (Northwestern University)</p>
+                <img src="path/to/project4.jpg" alt="Project 4">
+            </div>
+            <div class="project">
+                <h3><a href="project5.html">Research: Digital Twin Framework for Predictive Maintenance using Temporal Fusion Transformer</a></h3>
+                <p>Using a temporal fusion transformer<br>Research with Prof. Wei Chen (Northwestern University)</p>
+                <img src="path/to/project5.jpg" alt="Project 5">
+            </div>
+            <div class="project">
+                <h3><a href="project6.html">Research: Novel Computer Vision Particle Tracking</a></h3>
+                <p>NDA.<br>Research with Prof. Juan Santiago (Stanford University)</p>
+                <img src="path/to/project6.jpg" alt="Project 6">
+            </div>
         </div>
-        <div class="project">
-            <h3><a href="project2.html">Pick and Place Robotic Manipulation</a></h3>
-            <p>End-effector trajectory planning, odometry, inverse kinematics.\nClass with Prof. Kevin Lynch (Northwestern University)</p>
-            <img src="path/to/project2.jpg" alt="Project 2">
-        </div>
-        <div class="project">
-            <h3><a href="project3.html">Research: 6D Object Pose Estimation</a></h3>
-            <p>Using RGB video to estimate YCB object poses for tele-operated robot.\nResearch with Prof. Ed Colgate (Northwestern University)</p>
-            <img src="path/to/project3.jpg" alt="Project 3">
-        </div>
-        <div class="project">
-            <h3><a href="project4.html">Research: Online Robotic Gait Control using Generative AI</a></h3>
-            <p>Using an autoencoder to learn and generate control sequences for robot walking.\nResearch with Prof. Todd Murphey (Northwestern University)</p>
-            <img src="path/to/project4.jpg" alt="Project 4">
-        </div>
-        <div class="project">
-            <h3><a href="project4.html">Research: Digital Twin Framework for Predicitive Maintenance using Temporal Fusion Transformer</a></h3>
-            <p>Using a temporal fusion transformer  Research with Prof. Wei Chen (Northwestern University)</p>
-            <img src="path/to/project4.jpg" alt="Project 4">
-        </div>
-        <div class="project">
-            <h3><a href="project4.html">Research: Novel Computer Vision Particle Tracking</a></h3>
-            <p>NDA.\nResearch with Prof. Juan Santiago (Stanford Univesity)</p>
-            <img src="path/to/project4.jpg" alt="Project 4">
-        </div>
-        
     </div>
 </body>
 </html>

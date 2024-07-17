@@ -14,8 +14,12 @@ body {
 h1 {
     text-align: center;
 }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
 .project {
-    margin: 20px 0;
     padding: 20px;
     background-color: #1e1e1e;
     border-radius: 8px;
