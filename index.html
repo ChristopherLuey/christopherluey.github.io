@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Classes Progression</title>
+    <title>My Projects</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -18,114 +18,49 @@
             margin: 0 auto;
             padding: 20px;
         }
-        h1, h2 {
+        h1 {
             text-align: center;
         }
-        .year-section {
-            margin: 40px 0;
-        }
-        .year-title {
-            background-color: #333;
-            padding: 10px;
-            border-radius: 8px;
-        }
-        .class {
+        .project {
             margin: 20px 0;
             padding: 20px;
             background-color: #1e1e1e;
             border-radius: 8px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .class.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .class img {
+        .project img {
             max-width: 100%;
             border-radius: 8px;
         }
-        .tree {
-            border-left: 2px solid #666;
-            padding-left: 20px;
-            position: relative;
-        }
-        .tree::before {
-            content: '';
-            position: absolute;
-            left: -12px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #666;
-        }
-        .class {
-            position: relative;
-            margin-left: 20px;
-        }
-        .class::before {
-            content: '';
-            position: absolute;
-            left: -20px;
-            top: 20px;
-            width: 20px;
-            height: 2px;
-            background-color: #666;
+        .project a {
+            color: #61dafb;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>My Classes Progression</h1>
-        <div class="tree">
-            <div class="year-section">
-                <div class="year-title">
-                    <h2>Freshman Year</h2>
-                </div>
-                <div class="class">
-                    <h3>EA1: Linear Algebra</h3>
-                    <p>Introduction to linear algebra and its applications in engineering.</p>
-                    <img src="path/to/project1.jpg" alt="Project 1">
-                </div>
-                <div class="class">
-                    <h3>EA2: Mechanics</h3>
-                    <p>Fundamentals of mechanics including forces, motion, and energy.</p>
-                    <img src="path/to/project2.jpg" alt="Project 2">
-                </div>
-            </div>
-            <div class="year-section">
-                <div class="year-title">
-                    <h2>Sophomore Year</h2>
-                </div>
-                <div class="class">
-                    <h3>EA3: Thermodynamics</h3>
-                    <p>Introduction to the principles of thermodynamics and heat transfer.</p>
-                    <img src="path/to/project3.jpg" alt="Project 3">
-                </div>
-                <div class="class">
-                    <h3>EA4: Materials Science</h3>
-                    <p>Study of material properties and their applications in engineering.</p>
-                    <img src="path/to/project4.jpg" alt="Project 4">
-                </div>
-            </div>
-            <!-- Add more year sections and classes as needed -->
+        <h1>My Projects</h1>
+        <div class="project">
+            <h3><a href="project1.html">Linear Algebra</a></h3>
+            <p>Introduction to linear algebra and its applications in engineering.</p>
+            <img src="path/to/project1.jpg" alt="Project 1">
         </div>
+        <div class="project">
+            <h3><a href="project2.html">Mechanics</a></h3>
+            <p>Fundamentals of mechanics including forces, motion, and energy.</p>
+            <img src="path/to/project2.jpg" alt="Project 2">
+        </div>
+        <div class="project">
+            <h3><a href="project3.html">Thermodynamics</a></h3>
+            <p>Introduction to the principles of thermodynamics and heat transfer.</p>
+            <img src="path/to/project3.jpg" alt="Project 3">
+        </div>
+        <div class="project">
+            <h3><a href="project4.html">Materials Science</a></h3>
+            <p>Study of material properties and their applications in engineering.</p>
+            <img src="path/to/project4.jpg" alt="Project 4">
+        </div>
+        <!-- Add more projects as needed -->
     </div>
-    <script>
-        const classes = document.querySelectorAll('.class');
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
-
-        classes.forEach(classItem => {
-            observer.observe(classItem);
-        });
-    </script>
 </body>
 </html>
