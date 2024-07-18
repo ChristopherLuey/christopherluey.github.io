@@ -1,0 +1,41 @@
+{
+    "projects": [
+      {
+        "title": "Lagrangian Dynamic Simulation",
+        "description": "Lagrangian dynamics, simulation<br>Class with Prof. Todd Murphey (Northwestern University)",
+        "image": "path/to/project1.jpg",
+        "link": "project1.html"
+      },
+      {
+        "title": "Pick and Place Robotic Manipulation",
+        "description": "End-effector trajectory planning, odometry, inverse kinematics.<br>Class with Prof. Kevin Lynch (Northwestern University)",
+        "image": "path/to/project2.jpg",
+        "link": "project2.html"
+      },
+      {
+        "title": "Research: 6D Object Pose Estimation",
+        "description": "Using RGB video to estimate YCB object poses for tele-operated robot.<br>Research with Prof. Ed Colgate (Northwestern University)",
+        "image": "path/to/project3.jpg",
+        "link": "project3.html"
+      },
+      {
+        "title": "Research: Online Robotic Gait Control using Generative AI",
+        "description": "Using an autoencoder to learn and generate control sequences for robot walking.<br>Research with Prof. Todd Murphey (Northwestern University)",
+        "image": "path/to/project4.jpg",
+        "link": "project4.html"
+      },
+      {
+        "title": "Research: Digital Twin Framework for Predictive Maintenance using Temporal Fusion Transformer",
+        "description": "Using a temporal fusion transformer<br>Research with Prof. Wei Chen (Northwestern University)",
+        "image": "path/to/project5.jpg",
+        "link": "project5.html"
+      },
+      {
+        "title": "Research: Novel Computer Vision Particle Tracking",
+        "description": "NDA.<br>Research with Prof. Juan Santiago (Stanford University)",
+        "image": "path/to/project6.jpg",
+        "link": "project6.html"
+      }
+    ]
+  }
+  

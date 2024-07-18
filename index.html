@@ -51,38 +51,28 @@
 <body>
     <div class="container">
         <h1>Christopher Luey</h1>
-        <div class="projects-grid">
-            <a href="project1.html" class="project">
-                <h3>Lagrangian Dynamic Simulation</h3>
-                <p>Lagrangian dynamics, simulation<br>Class with Prof. Todd Murphey (Northwestern University)</p>
-                <img src="path/to/project1.jpg" alt="Project 1">
-            </a>
-            <a href="project2.html" class="project">
-                <h3>Pick and Place Robotic Manipulation</h3>
-                <p>End-effector trajectory planning, odometry, inverse kinematics.<br>Class with Prof. Kevin Lynch (Northwestern University)</p>
-                <img src="path/to/project2.jpg" alt="Project 2">
-            </a>
-            <a href="project3.html" class="project">
-                <h3>Research: 6D Object Pose Estimation</h3>
-                <p>Using RGB video to estimate YCB object poses for tele-operated robot.<br>Research with Prof. Ed Colgate (Northwestern University)</p>
-                <img src="path/to/project3.jpg" alt="Project 3">
-            </a>
-            <a href="project4.html" class="project">
-                <h3>Research: Online Robotic Gait Control using Generative AI</h3>
-                <p>Using an autoencoder to learn and generate control sequences for robot walking.<br>Research with Prof. Todd Murphey (Northwestern University)</p>
-                <img src="path/to/project4.jpg" alt="Project 4">
-            </a>
-            <a href="project5.html" class="project">
-                <h3>Research: Digital Twin Framework for Predictive Maintenance using Temporal Fusion Transformer</h3>
-                <p>Using a temporal fusion transformer<br>Research with Prof. Wei Chen (Northwestern University)</p>
-                <img src="path/to/project5.jpg" alt="Project 5">
-            </a>
-            <a href="project6.html" class="project">
-                <h3>Research: Novel Computer Vision Particle Tracking</h3>
-                <p>NDA.<br>Research with Prof. Juan Santiago (Stanford University)</p>
-                <img src="path/to/project6.jpg" alt="Project 6">
-            </a>
-        </div>
+        <div class="projects-grid" id="projects-grid"></div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('projects.json')
+                .then(response => response.json())
+                .then(data => {
+                    const projectsGrid = document.getElementById('projects-grid');
+                    data.projects.forEach(project => {
+                        const projectElement = document.createElement('a');
+                        projectElement.href = project.link;
+                        projectElement.classList.add('project');
+                        projectElement.innerHTML = `
+                            <h3>${project.title}</h3>
+                            <p>${project.description}</p>
+                            <img src="${project.image}" alt="${project.title}">
+                        `;
+                        projectsGrid.appendChild(projectElement);
+                    });
+                })
+                .catch(error => console.error('Error loading projects:', error));
+        });
+    </script>
 </body>
 </html>
