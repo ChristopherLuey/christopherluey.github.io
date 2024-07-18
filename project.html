@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Project Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .project-details {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .project-details img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .back-link {
+            display: block;
+            margin: 20px 0;
+            text-align: center;
+            color: #61dafb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="projectTitle">Project Title</h1>
+        <div class="project-details">
+            <p id="projectDescription"></p>
+            <img id="projectImage" src="" alt="Project Image">
+            <p id="detailedDescription"></p>
+        </div>
+        <a href="index.html" class="back-link">Back to Projects</a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const queryParams = new URLSearchParams(window.location.search);
+            const projectTitle = queryParams.get('title');
+
+            fetch('projects.json')
+                .then(response => response.json())
+                .then(data => {
+                    const project = data.projects.find(p => p.title === projectTitle);
+
+                    if (project) {
+                        document.getElementById('pageTitle').textContent = project.details.pageTitle;
+                        document.getElementById('projectTitle').textContent = project.details.pageTitle;
+                        document.getElementById('projectDescription').innerHTML = project.details.projectDescription;
+                        document.getElementById('projectImage').src = project.details.image;
+                        document.getElementById('detailedDescription').textContent = project.details.detailedDescription;
+                    } else {
+                        console.error('Project not found');
+                    }
+                })
+                .catch(error => console.error('Error loading project details:', error));
+        });
+    </script>
+</body>
+</html>
