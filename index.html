@@ -47,6 +47,7 @@
 
                     let currentMediaIndex = 0;
                     function showNextMedia() {
+                        if (allMedia.length === 0) return;
                         const media = allMedia[currentMediaIndex];
                         const mediaElement = (media.endsWith('.mov') || media.endsWith('.mp4')) ? 
                             `<video src="${media}" autoplay muted playsinline loop width="100%"></video>` : 
