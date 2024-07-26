@@ -10,7 +10,7 @@
     <div class="container">
         <h1 id="projectTitle">Project Title</h1>
         <div class="project-details">
-            <img id="projectImage" src="" alt="Project Image">
+            <div id="mediaContainer"></div>
             <p id="projectDescription"></p>
             <p id="detailedDescription"></p>
         </div>
@@ -30,7 +30,10 @@
                         document.getElementById('pageTitle').textContent = project.details.pageTitle;
                         document.getElementById('projectTitle').textContent = project.details.pageTitle;
                         document.getElementById('projectDescription').innerHTML = project.details.projectDescription;
-                        document.getElementById('projectImage').src = project.details.image;
+                        const mediaContent = project.details.media.endsWith('.mov') ? 
+                            `<video src="${project.details.media}" controls></video>` : 
+                            `<img src="${project.details.media}" alt="${project.details.pageTitle}">`;
+                        document.getElementById('mediaContainer').innerHTML = mediaContent;
                         document.getElementById('detailedDescription').textContent = project.details.detailedDescription;
                     } else {
                         console.error('Project not found');

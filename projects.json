@@ -3,13 +3,13 @@
     {
       "title": "Lagrangian Dynamic Simulation",
       "description": "Lagrangian dynamics, simulation<br>Class with Prof. Todd Murphey (Northwestern University)",
-      "image": "path/to/project1.jpg",
+      "image": "images/1/1.mov",
       "link": "project.html?title=Lagrangian%20Dynamic%20Simulation",
       "details": {
         "pageTitle": "Lagrangian Dynamic Simulation",
         "projectDescription": "Lagrangian dynamics, simulation<br>Class with Prof. Todd Murphey (Northwestern University)",
         "detailedDescription": "Detailed description of the project...",
-        "image": "path/to/project1.jpg"
+        "image": "images/1/IMG_0410_Original.jpeg"
       }
     },
     {
