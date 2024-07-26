@@ -27,7 +27,7 @@
                         projectElement.href = project.link;
                         projectElement.classList.add('project');
                         const mediaContent = (project.media[0].endsWith('.mov') || project.media[0].endsWith('.mp4')) ? 
-                            `<video src="${project.media[0]}" autoplay muted playsinline loop width="100%"></video>` : 
+                            `<video src="${project.media[0]}" autoplay muted playsinline loop></video>` : 
                             `<img src="${project.media[0]}" alt="${project.title}">`;
                         projectElement.innerHTML = `
                             ${mediaContent}
@@ -50,7 +50,7 @@
                         if (allMedia.length === 0) return;
                         const media = allMedia[currentMediaIndex];
                         const mediaElement = (media.endsWith('.mov') || media.endsWith('.mp4')) ? 
-                            `<video src="${media}" autoplay muted playsinline loop width="100%"></video>` : 
+                            `<video src="${media}" autoplay muted playsinline loop></video>` : 
                             `<img src="${media}" alt="Gallery Media">`;
                         mediaGallery.innerHTML = mediaElement;
                         currentMediaIndex = (currentMediaIndex + 1) % allMedia.length;

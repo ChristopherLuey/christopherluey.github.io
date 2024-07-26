@@ -3,7 +3,7 @@
     {
       "title": "Lagrangian Dynamic Simulation",
       "description": "Lagrangian dynamics, simulation<br><br>Class with Prof. Todd Murphey (Northwestern University)",
-      "media": ["images/1/0725.mov"], 
+      "media": ["images/1/0726.mov"], 
       "link": "project.html?title=Lagrangian%20Dynamic%20Simulation",
       "details": {
         "pageTitle": "Lagrangian Dynamic Simulation",
@@ -26,7 +26,7 @@
     },
     {
       "title": "6D Object Pose Estimation",
-      "description": "Using RGB video to estimate YCB object poses for tele-operated robot.<br>Research with Prof. Ed Colgate (Northwestern University)",
+      "description": "Using RGB video to estimate YCB object poses for tele-operated robot.<br><br>Research with Prof. Ed Colgate (Northwestern University)",
       "media": ["images/3/3.mov"],
       "link": "project.html?title=Research%3A%206D%20Object%20Pose%20Estimation",
       "details": {
