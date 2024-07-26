@@ -78,3 +78,9 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+
+.project video {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}

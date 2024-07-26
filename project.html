@@ -30,8 +30,8 @@
                         document.getElementById('pageTitle').textContent = project.details.pageTitle;
                         document.getElementById('projectTitle').textContent = project.details.pageTitle;
                         document.getElementById('projectDescription').innerHTML = project.details.projectDescription;
-                        const mediaContent = project.details.media.endsWith('.mov') ? 
-                            `<video src="${project.details.media}" controls></video>` : 
+                        const mediaContent = (project.details.media.endsWith('.mov') || project.details.media.endsWith('.mp4')) ? 
+                            `<video src="${project.details.media}" controls width="100%"></video>` : 
                             `<img src="${project.details.media}" alt="${project.details.pageTitle}">`;
                         document.getElementById('mediaContainer').innerHTML = mediaContent;
                         document.getElementById('detailedDescription').textContent = project.details.detailedDescription;
