@@ -2,8 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #0a0a0a, #1c1c1c);
-    color: #ffffff;
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+    color: #000000;
 }
 
 .container {
@@ -11,13 +11,13 @@ body {
     margin: 0 auto;
     padding: 20px;
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
     text-align: center;
-    color: #00ccff;
+    color: #003366;
 }
 
 .projects-grid {
@@ -28,10 +28,10 @@ h1 {
 
 .project {
     padding: 20px;
-    background: linear-gradient(to right, #1e3c72, #2a5298);
+    background: linear-gradient(to right, #99ccff, #cceeff);
     border-radius: 15px;
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
     transition: transform 0.2s;
 }
 
@@ -41,13 +41,13 @@ h1 {
 }
 
 .project a {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
 }
 
 .project:hover {
     transform: scale(1.05);
-    background: linear-gradient(to right, #2a5298, #1e3c72);
+    background: linear-gradient(to right, #cceeff, #99ccff);
 }
 
 @media (max-width: 768px) {
@@ -60,6 +60,6 @@ h1 {
     display: block;
     margin: 20px 0;
     text-align: center;
-    color: #00ccff;
+    color: #003366;
     text-decoration: none;
 }
