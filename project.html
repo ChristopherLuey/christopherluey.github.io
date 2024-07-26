@@ -33,7 +33,7 @@
 
                         const mediaContainer = document.getElementById('mediaContainer');
                         project.details.media.forEach(media => {
-                            const mediaElement = (media.endswith('.mov') || media.endsWith('.mp4')) ? 
+                            const mediaElement = (media.endsWith('.mov') || media.endsWith('.mp4')) ? 
                                 `<video src="${media}" autoplay muted playsinline loop width="100%"></video>` : 
                                 `<img src="${media}" alt="${project.details.pageTitle}">`;
                             mediaContainer.innerHTML += mediaElement;
