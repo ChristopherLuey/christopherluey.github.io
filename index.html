@@ -9,6 +9,8 @@
 <body>
     <div class="container">
         <h1>Christopher Luey</h1>
+        <div class="gallery" id="media-gallery"></div>
+        <h2>Projects</h2>
         <div class="projects-grid" id="projects-grid"></div>
     </div>
     <script>
@@ -17,11 +19,14 @@
                 .then(response => response.json())
                 .then(data => {
                     const projectsGrid = document.getElementById('projects-grid');
+                    const mediaGallery = document.getElementById('media-gallery');
+
+                    // Create project grid
                     data.projects.forEach(project => {
                         const projectElement = document.createElement('a');
                         projectElement.href = project.link;
                         projectElement.classList.add('project');
-                        const mediaContent = (project.media[0].endswith('.mov') || project.media[0].endsWith('.mp4')) ? 
+                        const mediaContent = (project.media[0].endsWith('.mov') || project.media[0].endsWith('.mp4')) ? 
                             `<video src="${project.media[0]}" autoplay muted playsinline loop width="100%"></video>` : 
                             `<img src="${project.media[0]}" alt="${project.title}">`;
                         projectElement.innerHTML = `
@@ -31,6 +36,27 @@
                         `;
                         projectsGrid.appendChild(projectElement);
                     });
+
+                    // Create media gallery
+                    const allMedia = [];
+                    data.projects.forEach(project => {
+                        project.details.media.forEach(media => {
+                            allMedia.push(media);
+                        });
+                    });
+
+                    let currentMediaIndex = 0;
+                    function showNextMedia() {
+                        const media = allMedia[currentMediaIndex];
+                        const mediaElement = (media.endsWith('.mov') || media.endsWith('.mp4')) ? 
+                            `<video src="${media}" autoplay muted playsinline loop width="100%"></video>` : 
+                            `<img src="${media}" alt="Gallery Media">`;
+                        mediaGallery.innerHTML = mediaElement;
+                        currentMediaIndex = (currentMediaIndex + 1) % allMedia.length;
+                    }
+
+                    showNextMedia();
+                    setInterval(showNextMedia, 3000);  // Change media every 3 seconds
                 })
                 .catch(error => console.error('Error loading projects:', error));
         });
