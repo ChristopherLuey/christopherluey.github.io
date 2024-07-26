@@ -3,25 +3,25 @@
     {
       "title": "Lagrangian Dynamic Simulation",
       "description": "Lagrangian dynamics, simulation<br><br>Class with Prof. Todd Murphey (Northwestern University)",
-      "media": ["images/1/1.mov"], 
+      "media": ["images/1/0725.mov"], 
       "link": "project.html?title=Lagrangian%20Dynamic%20Simulation",
       "details": {
         "pageTitle": "Lagrangian Dynamic Simulation",
         "projectDescription": "Lagrangian dynamics, simulation<br>Class with Prof. Todd Murphey (Northwestern University)",
         "detailedDescription": "Detailed description of the project...",
-        "media": ["images/1/IMG_0410_Original.jpeg", "images/1/1.mp4"]
+        "media": ["images/1/IMG_0410_Original.jpeg", "images/1/0725.mov"]
       }
     },
     {
       "title": "Pick and Place Robotic Manipulation",
       "description": "End-effector trajectory planning, odometry, inverse kinematics.<br>Class with Prof. Kevin Lynch (Northwestern University)",
-      "media": ["images/2/overshoot_simulation.mp4"],
+      "media": ["images/2/0725.mov"],
       "link": "project.html?title=Pick%20and%20Place%20Robotic%20Manipulation",
       "details": {
         "pageTitle": "Pick and Place Robotic Manipulation",
         "projectDescription": "End-effector trajectory planning, odometry, inverse kinematics.<br><br>Class with Prof. Kevin Lynch (Northwestern University)",
         "detailedDescription": "Detailed description of the project...",
-        "media": ["images/2/overshoot_simulation.mp4", "Milestone2.mov", "part3a.mov"]
+        "media": ["images/2/0725.mov", "Milestone2.mov", "part3a.mov"]
       }
     },
     {
