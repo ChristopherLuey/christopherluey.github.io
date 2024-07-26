@@ -39,7 +39,7 @@
     {
       "title": "Research: Online Robotic Gait Control using Generative AI",
       "description": "Using an autoencoder to learn and generate control sequences for robot walking.<br>Research with Prof. Todd Murphey (Northwestern University)",
-      "image": "path/to/project4.jpg",
+      "image": "project4.jpg",
       "link": "project.html?title=Research%3A%20Online%20Robotic%20Gait%20Control%20using%20Generative%20AI",
       "details": {
         "pageTitle": "Research: Online Robotic Gait Control using Generative AI",
@@ -51,7 +51,7 @@
     {
       "title": "Research: Digital Twin Framework for Predictive Maintenance using Temporal Fusion Transformer",
       "description": "Using a temporal fusion transformer<br>Research with Prof. Wei Chen (Northwestern University)",
-      "image": "path/to/project5.jpg",
+      "image": "project5.jpg",
       "link": "project.html?title=Research%3A%20Digital%20Twin%20Framework%20for%20Predictive%20Maintenance%20using%20Temporal%20Fusion%20Transformer",
       "details": {
         "pageTitle": "Research: Digital Twin Framework for Predictive Maintenance using Temporal Fusion Transformer",

@@ -2,16 +2,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to bottom, #f9f9f9, #e6e6e6);
+    background: #f9f9f9;
     color: #333333;
 }
 
 .container {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.95);
+    background: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -24,38 +24,27 @@ h1 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
 .project {
     padding: 20px;
-    background: linear-gradient(to right, #b3d9ff, #e6f7ff);
-    border-radius: 15px;
+    background: #ffffff;
+    border-radius: 10px;
     text-decoration: none;
     color: #333333;
-    transition: transform 0.2s, background 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .project img {
     max-width: 100%;
-    border-radius: 12px;
+    border-radius: 10px;
     margin-bottom: 15px;
 }
 
-.project a {
-    color: #004080;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.project:hover {
-    transform: scale(1.05);
-    background: linear-gradient(to right, #e6f7ff, #b3d9ff);
-}
-
-.project h2 {
+.project h3 {
     margin-top: 0;
     font-size: 1.5em;
     color: #004080;
@@ -63,12 +52,12 @@ h1 {
 
 .project p {
     margin-bottom: 0;
+    color: #666666;
 }
 
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
+.project:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .back-link {
@@ -82,4 +71,10 @@ h1 {
 
 .back-link:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
