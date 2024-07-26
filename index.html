@@ -21,9 +21,9 @@
                         const projectElement = document.createElement('a');
                         projectElement.href = project.link;
                         projectElement.classList.add('project');
-                        const mediaContent = (project.media.endsWith('.mov') || project.media.endsWith('.mp4')) ? 
-                            `<video src="${project.media}" controls width="100%"></video>` : 
-                            `<img src="${project.media}" alt="${project.title}">`;
+                        const mediaContent = (project.media[0].endswith('.mov') || project.media[0].endsWith('.mp4')) ? 
+                            `<video src="${project.media[0]}" autoplay muted playsinline loop width="100%"></video>` : 
+                            `<img src="${project.media[0]}" alt="${project.title}">`;
                         projectElement.innerHTML = `
                             ${mediaContent}
                             <h3>${project.title}</h3>

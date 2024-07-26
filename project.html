@@ -30,10 +30,15 @@
                         document.getElementById('pageTitle').textContent = project.details.pageTitle;
                         document.getElementById('projectTitle').textContent = project.details.pageTitle;
                         document.getElementById('projectDescription').innerHTML = project.details.projectDescription;
-                        const mediaContent = (project.details.media.endsWith('.mov') || project.details.media.endsWith('.mp4')) ? 
-                            `<video src="${project.details.media}" controls width="100%"></video>` : 
-                            `<img src="${project.details.media}" alt="${project.details.pageTitle}">`;
-                        document.getElementById('mediaContainer').innerHTML = mediaContent;
+
+                        const mediaContainer = document.getElementById('mediaContainer');
+                        project.details.media.forEach(media => {
+                            const mediaElement = (media.endswith('.mov') || media.endsWith('.mp4')) ? 
+                                `<video src="${media}" autoplay muted playsinline loop width="100%"></video>` : 
+                                `<img src="${media}" alt="${project.details.pageTitle}">`;
+                            mediaContainer.innerHTML += mediaElement;
+                        });
+
                         document.getElementById('detailedDescription').textContent = project.details.detailedDescription;
                     } else {
                         console.error('Project not found');

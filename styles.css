@@ -79,8 +79,16 @@ h1 {
     }
 }
 
-.project video {
+.project img, .project video {
     max-width: 100%;
     border-radius: 10px;
     margin-bottom: 15px;
+    pointer-events: none;
+}
+
+.project-details img, .project-details video {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    pointer-events: none;
 }

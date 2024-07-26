@@ -3,7 +3,7 @@
     {
       "title": "Lagrangian Dynamic Simulation",
       "description": "Lagrangian dynamics, simulation<br>Class with Prof. Todd Murphey (Northwestern University)",
-      "media": "images/1/1.mov", 
+      "media": ["images/1/1.mov"], 
       "link": "project.html?title=Lagrangian%20Dynamic%20Simulation",
       "details": {
         "pageTitle": "Lagrangian Dynamic Simulation",
@@ -15,7 +15,7 @@
     {
       "title": "Pick and Place Robotic Manipulation",
       "description": "End-effector trajectory planning, odometry, inverse kinematics.<br>Class with Prof. Kevin Lynch (Northwestern University)",
-      "media": "images/2/overshoot_simulation.mp4",
+      "media": ["images/2/overshoot_simulation.mp4"],
       "link": "project.html?title=Pick%20and%20Place%20Robotic%20Manipulation",
       "details": {
         "pageTitle": "Pick and Place Robotic Manipulation",
@@ -27,7 +27,7 @@
     {
       "title": "Research: 6D Object Pose Estimation",
       "description": "Using RGB video to estimate YCB object poses for tele-operated robot.<br>Research with Prof. Ed Colgate (Northwestern University)",
-      "media": "images/3/3.mov",
+      "media": ["images/3/3.mov"],
       "link": "project.html?title=Research%3A%206D%20Object%20Pose%20Estimation",
       "details": {
         "pageTitle": "Research: 6D Object Pose Estimation",
@@ -39,7 +39,7 @@
     {
       "title": "Research: Online Robotic Gait Control using Generative AI",
       "description": "Using an autoencoder to learn and generate control sequences for robot walking.<br>Research with Prof. Todd Murphey (Northwestern University)",
-      "media": "images/4/4.mov",
+      "media": ["images/4/4.mov"],
       "link": "project.html?title=Research%3A%20Online%20Robotic%20Gait%20Control%20using%20Generative%20AI",
       "details": {
         "pageTitle": "Research: Online Robotic Gait Control using Generative AI",
@@ -51,7 +51,7 @@
     {
       "title": "Research: Digital Twin Framework for Predictive Maintenance using Temporal Fusion Transformer",
       "description": "Using a temporal fusion transformer<br>Research with Prof. Wei Chen (Northwestern University)",
-      "media": "images/5/5.jpeg",
+      "media": ["images/5/5.jpeg"],
       "link": "project.html?title=Research%3A%20Digital%20Twin%20Framework%20for%20Predictive%20Maintenance%20using%20Temporal%20Fusion%20Transformer",
       "details": {
         "pageTitle": "Research: Digital Twin Framework for Predictive Maintenance using Temporal Fusion Transformer",
@@ -63,7 +63,7 @@
     {
       "title": "Research: Novel Computer Vision Particle Tracking",
       "description": "NDA.<br>Research with Prof. Juan Santiago (Stanford University)",
-      "media": "path/to/project6.jpg",
+      "media": ["path/to/project6.jpg"],
       "link": "project.html?title=Research%3A%20Novel%20Computer%20Vision%20Particle%20Tracking",
       "details": {
         "pageTitle": "Research: Novel Computer Vision Particle Tracking",
