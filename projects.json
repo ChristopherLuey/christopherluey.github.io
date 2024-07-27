@@ -7,14 +7,14 @@
       "link": "project.html?title=Lagrangian%20Dynamic%20Simulation",
       "details": {
         "pageTitle": "Lagrangian Dynamic Simulation",
-        "projectDescription": "Lagrangian dynamics, simulation<br>Class with Prof. Todd Murphey (Northwestern University)",
+        "projectDescription": "Lagrangian dynamics, simulation<br><br>Class with Prof. Todd Murphey (Northwestern University)",
         "detailedDescription": "Detailed description of the project...",
         "media": ["images/1/IMG_0410_Original.jpeg", "images/1/0725.mov"]
       }
     },
     {
       "title": "Pick and Place Robotic Manipulation",
-      "description": "End-effector trajectory planning, odometry, inverse kinematics.<br>Class with Prof. Kevin Lynch (Northwestern University)",
+      "description": "End-effector trajectory planning, odometry, inverse kinematics.<br><br>Class with Prof. Kevin Lynch (Northwestern University)",
       "media": ["images/2/0725.mov"],
       "link": "project.html?title=Pick%20and%20Place%20Robotic%20Manipulation",
       "details": {
