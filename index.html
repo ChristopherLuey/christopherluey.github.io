@@ -9,7 +9,6 @@
 <body>
     <div class="container">
         <h1>Christopher Luey</h1>
-        <div class="gallery" id="media-gallery"></div>
         <h2>Projects</h2>
         <div class="projects-grid" id="projects-grid"></div>
     </div>
@@ -19,7 +18,6 @@
                 .then(response => response.json())
                 .then(data => {
                     const projectsGrid = document.getElementById('projects-grid');
-                    const mediaGallery = document.getElementById('media-gallery');
 
                     // Create project grid
                     data.projects.forEach(project => {
@@ -36,28 +34,6 @@
                         `;
                         projectsGrid.appendChild(projectElement);
                     });
-
-                    // Create media gallery
-                    const allMedia = [];
-                    data.projects.forEach(project => {
-                        project.details.media.forEach(media => {
-                            allMedia.push(media);
-                        });
-                    });
-
-                    let currentMediaIndex = 0;
-                    function showNextMedia() {
-                        if (allMedia.length === 0) return;
-                        const media = allMedia[currentMediaIndex];
-                        const mediaElement = (media.endsWith('.mov') || media.endsWith('.mp4')) ? 
-                            `<video src="${media}" autoplay muted playsinline loop></video>` : 
-                            `<img src="${media}" alt="Gallery Media">`;
-                        mediaGallery.innerHTML = mediaElement;
-                        currentMediaIndex = (currentMediaIndex + 1) % allMedia.length;
-                    }
-
-                    showNextMedia();
-                    setInterval(showNextMedia, 3000);  // Change media every 3 seconds
                 })
                 .catch(error => console.error('Error loading projects:', error));
         });
