@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    width: 100%;
+    width: 95%;
     margin: 0px auto;
     padding: 0px;
     border-radius: 0px;
@@ -28,21 +28,21 @@ h1 {
     text-align: center;
     color: #1a73e8;
     font-size: 3em;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 h2 {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: #333333;
-    font-size: 2.5em;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    font-size: 2em;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 2fr));
     gap: 40px;
 }
 
