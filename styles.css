@@ -12,12 +12,13 @@ body {
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
+    text-align: left; /* Left justify all text */
 }
 
 .container {
-    width: 95%;
+    width: 100%;
     margin: 0px auto;
-    padding: 0px;
+    padding: 5%;
     border-radius: 0px;
     background: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -42,19 +43,19 @@ h2 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
     gap: 40px;
 }
 
 .project {
-    padding: 10px;
+    padding: 30px;
     background: #ffffff;
     border-radius: 5px;
     text-decoration: none;
     color: #333333;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    text-align: center;
+    text-align: left; /* Left justify all text */
 }
 
 .project img, .project video {
@@ -76,6 +77,11 @@ h2 {
     margin-bottom: 0;
     color: #666666;
     font-size: 1.2em;
+    font-weight: 300; /* Make the font skinnier */
+}
+
+.project .class-with {
+    color: #999999; /* More muted color for the class with section */
 }
 
 .project:hover {
