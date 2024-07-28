@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     background: #ffffff;
@@ -17,10 +17,10 @@ body {
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 40px auto;
-    padding: 40px;
+    margin: 0px auto;
+    padding: 0px;
     border-radius: 15px;
-    background: #f9f9f9;
+    background: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -48,19 +48,19 @@ h2 {
 }
 
 .project {
-    padding: 30px;
+    padding: 10px;
     background: #ffffff;
-    border-radius: 15px;
+    border-radius: 5px;
     text-decoration: none;
     color: #333333;
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
 
 .project img, .project video {
     max-width: 80%;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-bottom: 15px;
     pointer-events: none;
 }
