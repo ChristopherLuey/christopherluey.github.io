@@ -59,10 +59,11 @@ h2 {
 }
 
 .project img, .project video {
-    max-width: 80%;
+    max-width: 90%;
     border-radius: 5px;
     margin-bottom: 15px;
     pointer-events: none;
+    text-align: center;
 }
 
 .project h3 {
