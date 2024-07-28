@@ -16,51 +16,51 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 40px 20px;
-    border-radius: 12px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 15px;
     background: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: #004080;
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: 3em;
+    margin-bottom: 30px;
 }
 
 h2 {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     color: #333333;
-    font-size: 2em;
+    font-size: 2.5em;
     margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .project {
     padding: 20px;
     background: #ffffff;
-    border-radius: 10px;
+    border-radius: 15px;
     text-decoration: none;
     color: #333333;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centering the text */
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .project img, .project video {
-    max-width: 100%;
-    border-radius: 10px;
+    width: 100%;
+    border-radius: 15px;
     margin-bottom: 15px;
     pointer-events: none;
 }
@@ -68,7 +68,7 @@ h2 {
 .project h3 {
     font-family: 'Montserrat', sans-serif;
     margin-top: 0;
-    font-size: 1.5em;
+    font-size: 1.8em;
     color: #004080;
 }
 
@@ -76,21 +76,22 @@ h2 {
     font-family: 'Roboto', sans-serif;
     margin-bottom: 0;
     color: #666666;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 .project:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .back-link {
     display: block;
-    margin: 20px 0;
+    margin: 40px 0;
     text-align: center;
     color: #004080;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.2em;
 }
 
 .back-link:hover {
@@ -98,12 +99,32 @@ h2 {
 }
 
 .project-media {
-    width: 50%; /* Change this to adjust the size */
+    width: 80%; /* Change this to adjust the size */
     margin-bottom: 20px; /* Add spacing below media */
 }
 
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .back-link {
+        font-size: 1em;
+    }
+
+    .project-media {
+        width: 100%;
     }
 }
