@@ -5,7 +5,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f0f4f8;
+    background: #ffffff;
     color: #333333;
     display: flex;
     justify-content: center;
@@ -16,20 +16,20 @@ body {
 
 .container {
     width: 90%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 40px auto;
     padding: 40px;
     border-radius: 15px;
-    background: #ffffff;
+    background: #f9f9f9;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    color: #004080;
+    color: #1a73e8;
     font-size: 3em;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -44,23 +44,23 @@ h2 {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 40px;
 }
 
 .project {
-    padding: 20px;
+    padding: 30px;
     background: #ffffff;
     border-radius: 15px;
     text-decoration: none;
     color: #333333;
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .project img, .project video {
-    width: 100%;
-    border-radius: 15px;
+    max-width: 80%;
+    border-radius: 10px;
     margin-bottom: 15px;
     pointer-events: none;
 }
@@ -69,7 +69,7 @@ h2 {
     font-family: 'Montserrat', sans-serif;
     margin-top: 0;
     font-size: 1.8em;
-    color: #004080;
+    color: #1a73e8;
 }
 
 .project p {
@@ -81,14 +81,14 @@ h2 {
 
 .project:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
 .back-link {
     display: block;
     margin: 40px 0;
     text-align: center;
-    color: #004080;
+    color: #1a73e8;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.2em;
@@ -99,7 +99,8 @@ h2 {
 }
 
 .project-media {
-    width: 80%; /* Change this to adjust the size */
+    width: 100%; /* Ensure full width within the container */
+    max-width: 400px; /* Set a max-width for images and videos */
     margin-bottom: 20px; /* Add spacing below media */
 }
 
