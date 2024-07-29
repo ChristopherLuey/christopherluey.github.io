@@ -17,7 +17,7 @@ body {
 
 .container {
     width: 100%;
-    margin: 10% auto;
+    margin: 20% 0px;
     padding: 0px;
     border-radius: 0px;
     background: #ffffff;
@@ -69,16 +69,16 @@ h2 {
 .project h3 {
     font-family: 'Montserrat', sans-serif;
     margin-top: 0;
-    font-size: 1em;
+    font-size: 1.5em;
     color: #1a73e8;
 }
 
 .project p {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin-bottom: 0;
     color: #666666;
-    font-size: 1.2em;
-    font-weight: 300; /* Make the font skinnier */
+    font-size: 1em;
+    font-weight: 200; /* Make the font skinnier */
 }
 
 .project .class-with {
@@ -134,4 +134,11 @@ h2 {
     .project-media {
         width: 100%;
     }
+}
+
+.class-with {
+    font-size: 0.9em; /* Make the font smaller */
+    font-style: italic; /* Make the text italicized */
+    color: #999999; /* Optional: a more muted color */
+    font-weight: 200; /* Make the font skinnier */
 }

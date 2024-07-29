@@ -2,72 +2,72 @@
   "projects": [
     {
       "title": "Lagrangian Dynamics Simulation",
-      "description": "A simulation of a gymnastics high bar dismount using Lagrangian dynamics and numerical methods.<br><br>Class with Prof. Todd Murphey (Northwestern University)",
+      "description": "A simulation of a gymnastics high bar dismount using Lagrangian dynamics and numerical methods.<br><br><span class=\"class-with\">Class with Prof. Todd Murphey (Northwestern University)</span>",
       "media": ["images/1/0726.mov"], 
-      "link": "project.html?title=Lagrangian%20Dynamic%20Simulation",
+      "link": "project.html?title=Lagrangian%20Dynamics%20Simulation",
       "details": {
         "pageTitle": "Lagrangian Dynamics Simulation",
-        "projectDescription": "Lagrangian dynamics, simulation<br><br>Class with Prof. Todd Murphey (Northwestern University)",
+        "projectDescription": "Lagrangian dynamics, simulation<br><br><span class=\"class-with\">Class with Prof. Todd Murphey (Northwestern University)</span>",
         "detailedDescription": "This project involves simulating a gymnastics high bar dismount solving the Euler Lagrange Equations and using numerical simulation techniques. The system is modeled with two rigid bodies representing the human arms and torso, each with defined volume and mass.\n\nThe simulation is divided into two phases:\n\nPhase One (Double Pendulum): The simulation begins with the bodies in a vertically upright position and initial angular velocities. The arms (Body B) rotate around the high bar (2.8m high) until a specified release angle is reached. This phase employs the Euler-Lagrange equation to model the dynamics and constraints.\n\nPhase Two (Projectile Motion): Upon reaching the release angle, the constraint on the arms is removed, and both bodies follow a projectile trajectory. The simulation continues until a plastic impact is detected when the torso (Body D) hits the ground. The impact is considered successful when both corners of the torso contact the ground simultaneously.\n\nThe simulation leverages numerical methods, including symbolic computation SymPy for the Euler-Lagrange equations and numerical solvers for the projectile motion phase, to ensure accurate and realistic modeling of the dismount.",
         "media": ["images/1/IMG_0410_Original.jpeg", "images/1/0725.mov"]
       }
     },
     {
       "title": "Pick and Place Robotic Manipulation",
-      "description": "End-effector trajectory planning, odometry, inverse kinematics.<br><br>Class with Prof. Kevin Lynch (Northwestern University)",
+      "description": "End-effector trajectory planning, odometry, inverse kinematics.<br><br><span class=\"class-with\">Class with Prof. Kevin Lynch (Northwestern University)</span>",
       "media": ["images/2/0725.mov"],
       "link": "project.html?title=Pick%20and%20Place%20Robotic%20Manipulation",
       "details": {
         "pageTitle": "Pick and Place Robotic Manipulation",
-        "projectDescription": "End-effector trajectory planning, odometry, inverse kinematics.<br><br>Class with Prof. Kevin Lynch (Northwestern University)",
+        "projectDescription": "End-effector trajectory planning, odometry, inverse kinematics.<br><br><span class=\"class-with\">Class with Prof. Kevin Lynch (Northwestern University)</span>",
         "detailedDescription": "Detailed description of the project...",
         "media": ["images/2/0725.mov", "Milestone2.mov", "part3a.mov"]
       }
     },
     {
       "title": "6D Object Pose Estimation",
-      "description": "Using RGB video to estimate YCB object poses for tele-operated robot.<br><br>Research with Prof. Ed Colgate (Northwestern University)",
+      "description": "Using RGB video to estimate YCB object poses for tele-operated robot.<br><br><span class=\"class-with\">Research with Prof. Ed Colgate (Northwestern University)</span>",
       "media": ["images/3/3.mov"],
       "link": "project.html?title=Research%3A%206D%20Object%20Pose%20Estimation",
       "details": {
         "pageTitle": "6D Object Pose Estimation",
-        "projectDescription": "Using RGB video to estimate YCB object poses for tele-operated robot.<br><br>Research with Prof. Ed Colgate (Northwestern University)",
+        "projectDescription": "Using RGB video to estimate YCB object poses for tele-operated robot.<br><br><span class=\"class-with\">Research with Prof. Ed Colgate (Northwestern University)</span>",
         "detailedDescription": "Detailed description of the project...",
         "media": ["images/3/3.mov"]
       }
     },
     {
       "title": "Online Robotic Gait Control using Generative AI",
-      "description": "Using an autoencoder to learn and generate control sequences for robot walking.<br><br>Research with Prof. Todd Murphey (Northwestern University)",
+      "description": "Using an autoencoder to learn and generate control sequences for robot walking.<br><br><span class=\"class-with\">Research with Prof. Todd Murphey (Northwestern University)</span>",
       "media": ["images/4/4.mov"],
       "link": "project.html?title=Research%3A%20Online%20Robotic%20Gait%20Control%20using%20Generative%20AI",
       "details": {
         "pageTitle": "Research: Online Robotic Gait Control using Generative AI",
-        "projectDescription": "Using an autoencoder to learn and generate control sequences for robot walking.<br>Research with Prof. Todd Murphey (Northwestern University)",
+        "projectDescription": "Using an autoencoder to learn and generate control sequences for robot walking.<br><br><span class=\"class-with\">Research with Prof. Todd Murphey (Northwestern University)</span>",
         "detailedDescription": "Detailed description of the project...",
         "media": ["images/4/4.mov", "images/4/4.jpeg"]
       }
     },
     {
       "title": "A Digital Twin Framework for Predictive Maintenance using Temporal Fusion Transformers",
-      "description": "Using a temporal fusion transformer<br><br>Research with Prof. Wei Chen (Northwestern University)",
+      "description": "Using a temporal fusion transformer<br><br><span class=\"class-with\">Research with Prof. Wei Chen (Northwestern University)</span>",
       "media": ["images/5/5.jpeg"],
       "link": "project.html?title=Research%3A%20Digital%20Twin%20Framework%20for%20Predictive%20Maintenance%20using%20Temporal%20Fusion%20Transformer",
       "details": {
         "pageTitle": "A Digital Twin Framework for Predictive Maintenance using Temporal Fusion Transformers",
-        "projectDescription": "Using a temporal fusion transformer<br>Research with Prof. Wei Chen (Northwestern University)",
+        "projectDescription": "Using a temporal fusion transformer<br><br><span class=\"class-with\">Research with Prof. Wei Chen (Northwestern University)</span>",
         "detailedDescription": "Detailed description of the project...",
         "media": ["images/5/5.jpeg"]
       }
     },
     {
       "title": "Computer Vision Particle Tracking",
-      "description": "NDA.<br><br>Research with Prof. Juan Santiago (Stanford University)",
+      "description": "NDA.<br><br><span class=\"class-with\">Research with Prof. Juan Santiago (Stanford University)</span>",
       "media": ["path/to/project6.jpg"],
       "link": "project.html?title=Research%3A%20Novel%20Computer%20Vision%20Particle%20Tracking",
       "details": {
         "pageTitle": "Research: Novel Computer Vision Particle Tracking",
-        "projectDescription": "NDA.<br>Research with Prof. Juan Santiago (Stanford University)",
+        "projectDescription": "NDA.<br><br><span class=\"class-with\">Research with Prof. Juan Santiago (Stanford University)</span>",
         "detailedDescription": "Detailed description of the project...",
         "media": "path/to/project6.jpg"
       }
