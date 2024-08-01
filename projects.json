@@ -9,7 +9,7 @@
         "pageTitle": "Lagrangian Dynamics Simulation",
         "projectDescription": "Lagrangian dynamics, simulation<br><br><span class=\"class-with\">Class with Prof. Todd Murphey (Northwestern University)</span>",
         "detailedDescription": "This project involves simulating a gymnastics high bar dismount solving the Euler Lagrange Equations and using numerical simulation techniques. The system is modeled with two rigid bodies representing the human arms and torso, each with defined volume and mass.\n\nThe simulation is divided into two phases:\n\nPhase One (Double Pendulum): The simulation begins with the bodies in a vertically upright position and initial angular velocities. The arms (Body B) rotate around the high bar (2.8m high) until a specified release angle is reached. This phase employs the Euler-Lagrange equation to model the dynamics and constraints.\n\nPhase Two (Projectile Motion): Upon reaching the release angle, the constraint on the arms is removed, and both bodies follow a projectile trajectory. The simulation continues until a plastic impact is detected when the torso (Body D) hits the ground. The impact is considered successful when both corners of the torso contact the ground simultaneously.\n\nThe simulation leverages numerical methods, including symbolic computation SymPy for the Euler-Lagrange equations and numerical solvers for the projectile motion phase, to ensure accurate and realistic modeling of the dismount.",
-        "media": ["images/1/IMG_0410_Original.jpeg", "images/1/0725.mov"]
+        "media": ["images/1/IMG_0410_Original.jpeg", "images/1/0726.mov", "images/1/1.mov", "images/1/IMG_0415_Original.jpeg"]
       }
     },
     {
