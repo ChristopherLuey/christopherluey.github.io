@@ -10,9 +10,9 @@
     <div class="container">
         <h1 id="projectTitle">Project Title</h1>
         <div class="project-details">
-            <div id="mediaContainer"></div>
             <p id="projectDescription"></p>
-            <p id="detailedDescription"></p>
+            <div id="detailedDescription"></div>
+            <div id="mediaContainer" class="media-grid"></div> <!-- Added class media-grid for grid layout -->
         </div>
         <a href="index.html" class="back-link">Back to Projects</a>
     </div>
@@ -31,6 +31,8 @@
                         document.getElementById('projectTitle').textContent = project.details.pageTitle;
                         document.getElementById('projectDescription').innerHTML = project.details.projectDescription;
 
+                        document.getElementById('detailedDescription').innerHTML = project.details.detailedDescription;
+                        
                         const mediaContainer = document.getElementById('mediaContainer');
                         project.details.media.forEach(media => {
                             const mediaElement = (media.endsWith('.mov') || media.endsWith('.mp4')) ? 
@@ -38,8 +40,6 @@
                                 `<img src="${media}" alt="${project.details.pageTitle}" class="project-media">`;
                             mediaContainer.innerHTML += mediaElement;
                         });
-
-                        document.getElementById('detailedDescription').textContent = project.details.detailedDescription;
                     } else {
                         console.error('Project not found');
                     }
