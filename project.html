@@ -12,7 +12,7 @@
         <div class="project-details">
             <p id="projectDescription"></p>
             <div id="detailedDescription"></div>
-            <div id="mediaContainer" class="media-grid"></div> <!-- Added class media-grid for grid layout -->
+            <div id="mediaContainer" class="media-grid"></div>
         </div>
         <a href="index.html" class="back-link">Back to Projects</a>
     </div>
@@ -30,7 +30,6 @@
                         document.getElementById('pageTitle').textContent = project.details.pageTitle;
                         document.getElementById('projectTitle').textContent = project.details.pageTitle;
                         document.getElementById('projectDescription').innerHTML = project.details.projectDescription;
-
                         document.getElementById('detailedDescription').innerHTML = project.details.detailedDescription;
                         
                         const mediaContainer = document.getElementById('mediaContainer');
