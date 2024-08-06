@@ -28,7 +28,7 @@
       "title": "6D Object Pose Estimation",
       "description": "Using RGB video to estimate YCB object poses for tele-operated robot.<br><br><span class=\"class-with\">Research with Prof. Ed Colgate (Northwestern University)</span>",
       "media": ["images/3/3.mov"],
-      "link": "project.html?title=Research%3A%206D%20Object%20Pose%20Estimation",
+      "link": "project.html?title=6D%20Object%20Pose%20Estimation",
       "details": {
         "pageTitle": "6D Object Pose Estimation",
         "projectDescription": "Using RGB video to estimate YCB object poses for tele-operated robot.<br><br><span class=\"class-with\">Research with Prof. Ed Colgate (Northwestern University)</span>",
@@ -40,7 +40,7 @@
       "title": "Online Robotic Gait Control using Generative AI",
       "description": "Using an autoencoder to learn and generate control sequences for robot walking.<br><br><span class=\"class-with\">Research with Prof. Todd Murphey (Northwestern University)</span>",
       "media": ["images/4/4.mov"],
-      "link": "project.html?title=Research%3A%20Online%20Robotic%20Gait%20Control%20using%20Generative%20AI",
+      "link": "project.html?title=Online%20Robotic%20Gait%20Control%20using%20Generative%20AI",
       "details": {
         "pageTitle": "Research: Online Robotic Gait Control using Generative AI",
         "projectDescription": "Using an autoencoder to learn and generate control sequences for robot walking.<br><br><span class=\"class-with\">Research with Prof. Todd Murphey (Northwestern University)</span>",
@@ -52,9 +52,9 @@
       "title": "A Digital Twin Framework for Predictive Maintenance using Temporal Fusion Transformers",
       "description": "Using a temporal fusion transformer<br><br><span class=\"class-with\">Research with Prof. Wei Chen (Northwestern University)</span>",
       "media": ["images/5/5.jpeg"],
-      "link": "project.html?title=Research%3A%20Digital%20Twin%20Framework%20for%20Predictive%20Maintenance%20using%20Temporal%20Fusion%20Transformer",
+      "link": "project.html?title=A%20Digital%20Twin%20Framework%20for%20Predictive%20Maintenance%20using%20Temporal%20Fusion%20Transformer",
       "details": {
-        "pageTitle": "A Digital Twin Framework for Predictive Maintenance using Temporal Fusion Transformers",
+        "pageTitle": "Research: A Digital Twin Framework for Predictive Maintenance using Temporal Fusion Transformers",
         "projectDescription": "Using a temporal fusion transformer<br><br><span class=\"class-with\">Research with Prof. Wei Chen (Northwestern University)</span>",
         "detailedDescription": "<p>This project introduces a novel digital twin framework for predictive maintenance using Probabilistic Temporal Fusion Transformers (TFTs). The primary objective is to optimize tire resource allocation by predicting tire wear and extending the lifespan of vehicle tires, thereby reducing environmental impact and mechanical waste.</p><p>The framework integrates several advanced techniques and methods:</p><ul><li><strong>Temporal Fusion Transformer Architecture:</strong> Utilized for processing time-series data to predict future states of tires. Key components include static covariate encoders, LSTM encoder-decoder, and masked multi-head attention mechanisms.</li><li><strong>Digital Twin Method:</strong> A hybrid approach combining physical models (Finite Element Method - FEM) with machine learning models to monitor and predict the mechanical lifetime of systems.</li><li><strong>Real-Time Adaptation and Decision Making:</strong> The system employs a Tire State Decision Algorithm (TSDA) to dynamically update tire health predictions and make maintenance decisions based on real-time data.</li><li><strong>Reinforcement Learning for Resource Allocation:</strong> A reinforcement learning (RL) framework is developed to optimize tire swaps and rotations, ensuring even wear and maximizing tire life. The RL agent learns strategies from data to make optimal decisions under varying conditions.</li></ul><p>The implementation involved the following steps:</p><ol><li><strong>Data Collection:</strong> Time-series data from vehicle sensors, including tire pressure, casing temperature, load, speed, road curvature, and mileage.</li><li><strong>Data Processing:</strong> Gaussian kernel smoothing and adaptive down-sampling to handle large datasets efficiently while preserving critical features.</li><li><strong>Model Training:</strong> The TFT model was trained using PyTorch with a focus on minimizing Mean Absolute Percentage Error (MAPE). The TFT model outperformed traditional models such as LSTM, RNN, and GRU.</li><li><strong>Integration with Physical Model:</strong> The TFT model predictions are combined with FEM-based tire models to enhance prediction accuracy.</li><li><strong>Validation and Results:</strong> The model was validated using real-world data from Michelin's fleet, demonstrating accurate predictions of tire degradation and remaining mileage.</li></ol><p>The project showcased significant advancements:</p><ul><li>Improved lifetime prediction accuracy with TFT, achieving a MAPE of 29.5 compared to higher errors in other models.</li><li>Real-time decision-making capabilities for maintenance actions, reducing unnecessary tire replacements and extending tire usage.</li><li>Substantial environmental benefits by reducing CO2 emissions, energy consumption, and raw material usage.</li></ul><p>This research represents a significant step towards sustainable and efficient predictive maintenance in the automotive industry, with potential applications in various other mechanical systems.</p>",
         "media": ["images/5/5.jpeg"]
@@ -64,11 +64,11 @@
       "title": "Image Analysis Particle Tracking",
       "description": "NDA.<br><br><span class=\"class-with\">Research with Prof. Juan Santiago (Stanford University)</span>",
       "media": ["images/6/6.JPG"],
-      "link": "project.html?title=Research%3A%20Novel%20Computer%20Vision%20Particle%20Tracking",
+      "link": "project.html?title=Novel%20Computer%20Vision%20Particle%20Tracking",
       "details": {
         "pageTitle": "Research: Novel Computer Vision Particle Tracking",
         "projectDescription": "NDA.<br><br><span class=\"class-with\">Research with Prof. Juan Santiago (Stanford University)</span>",
-        "detailedDescription": "<p>Detailed description of the project...</p>",
+        "detailedDescription": "<p>Computer vision</p>",
         "media": ["images/6/6.JPG"]
       }
     }
