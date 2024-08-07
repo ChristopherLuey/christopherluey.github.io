@@ -151,3 +151,9 @@ header h2 {
         font-size: 1em;
     }
 }
+
+.class-with {
+    color: #999999;
+    font-size: 0.9em;
+    font-style: italic;
+}
