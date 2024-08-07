@@ -7,19 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Christopher Luey</h1>
-        <h2>Projects and Research</h2>
-        <div class="projects-grid" id="projects-grid"></div>
-    </div>
+    <header>
+        <div class="container">
+            <h1>Christopher Luey</h1>
+            <h2>Projects and Research</h2>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="projects-grid" id="projects-grid"></div>
+        </div>
+    </main>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             fetch('projects.json')
                 .then(response => response.json())
                 .then(data => {
                     const projectsGrid = document.getElementById('projects-grid');
-
-                    // Create project grid
                     data.projects.forEach(project => {
                         const projectElement = document.createElement('a');
                         projectElement.href = project.link;
