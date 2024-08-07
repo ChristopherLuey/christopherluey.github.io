@@ -7,34 +7,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1 id="projectTitle">Project Title</h1>
+    <div class="container">
+        <h1 id="projectTitle">Project Title</h1>
+        <div class="project-details">
+            <p id="projectDescription"></p>
+            <div id="detailedDescription"></div>
+            <div id="mediaContainer" class="media-grid"></div>
         </div>
-    </header>
-    <main>
-        <div class="container">
-            <div class="project-details">
-                <p id="projectDescription"></p>
-                <div id="detailedDescription"></div>
-                <div id="mediaContainer" class="media-grid"></div>
-            </div>
-            <a href="index.html" class="back-link">Back to Projects</a>
-        </div>
-    </main>
+        <a href="index.html" class="back-link">Back to Projects</a>
+    </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const queryParams = new URLSearchParams(window.location.search);
             const projectTitle = queryParams.get('title');
+
             fetch('projects.json')
                 .then(response => response.json())
                 .then(data => {
                     const project = data.projects.find(p => p.title === projectTitle);
+
                     if (project) {
                         document.getElementById('pageTitle').textContent = project.details.pageTitle;
                         document.getElementById('projectTitle').textContent = project.details.pageTitle;
                         document.getElementById('projectDescription').innerHTML = project.details.projectDescription;
                         document.getElementById('detailedDescription').innerHTML = project.details.detailedDescription;
+                        
                         const mediaContainer = document.getElementById('mediaContainer');
                         project.details.media.forEach(media => {
                             const mediaElement = (media.endsWith('.mov') || media.endsWith('.mp4')) ? 
