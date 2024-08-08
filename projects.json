@@ -72,6 +72,30 @@
         "detailedDescription": "<p>Computer vision</p>",
         "media": ["images/6/6.JPG"]
       }
+    },
+    {
+      "title": "SQL Compiler from Scratch",
+      "description": "NDA.<br><br><span class=\"class-with\">Class with Prof. Joe Hummel (Northwestern University)</span>",
+      "media": ["images/6/6.JPG"],
+      "link": "project.html?title=SQL%20Compiler%20from%20Scratch",
+      "details": {
+        "pageTitle": "SQL Compiler from Scratch using C",
+        "projectDescription": "Created a SQL compiler using C.<br><br><span class=\"class-with\">Class with Prof. Joe Hummel (Northwestern University)</span>",
+        "detailedDescription": "<p>Computer vision</p>",
+        "media": ["images/6/6.JPG"]
+      }
+    },
+    {
+      "title": "Mechatronic PID Controller from Scratch",
+      "description": "Custom PCB PID controller programmed using C<br><br><span class=\"class-with\">Class with Prof. Nick Marchuk (Northwestern University)</span>",
+      "media": ["images/6/6.JPG"],
+      "link": "project.html?title=Mechatronic%20PID%20Controller%20from%20Scratch",
+      "details": {
+        "pageTitle": "Mechatronic PID Controller from Scratch",
+        "projectDescription": "Custom PCB PID controller programmed using C<br><br><span class=\"class-with\">Research with Prof. Juan Santiago (Stanford University)</span>",
+        "detailedDescription": "<p>PCB, PID controller, </p>",
+        "media": ["images/6/6.JPG"]
+      }
     }
   ]
 }
