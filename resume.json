@@ -17,6 +17,21 @@
   ],
   "experience": [
     {
+      "company": "Innate Robotics",
+      "location": "Palo Alto, CA",
+      "position": "Robotics Engineer",
+      "period": "07/2025 – 07/2025",
+      "details": "YC-backed startup with Stanford grads. In preparation for consumer launch: designed a mechanical teleoperation rig for a large consumer robot, designed custom electrical PCBs with embedded microcontrollers, and implemented voice on a consumer robot by writing a custom firmware driver on NVIDIA Jetson Nano."
+    },
+    {
+      "company": "K-Scale Labs",
+      "location": "Palo Alto, CA",
+      "position": "Robotics Eng. (Part-time Paid Contractor)",
+      "period": "12/2024 – 02/2025",
+      "details": "Won humanoid robotics hackathon ($20K). Transitioned to mechanical design for K‑Bot wrist (team achieved $1,000,000 in preorders).",
+      "category": "industry"
+    },
+    {
       "company": "MIT Biomimetic Robotics Lab",
       "location": "Cambridge, MA",
       "position": "Researcher with Prof. Sangbae Kim",
@@ -54,33 +69,33 @@
     {
       "company": "Northwestern Interactive & Emergent Autonomy Lab",
       "location": "Evanston, IL",
-      "position": "Robotics and ML Researcher",
+      "position": "Robotics Researcher with Prof. Todd Murphey",
       "period": "10/2023 – 06/2024",
       "details": "Investigating conditional variational autoencoder (CVAE) for learning real-time robot dynamics and gait analysis, used PyTorch to develop models from scratch, tuned hyperparameters, and validated through OpenAI MuJoCo simulations on AntV3. Conceptualize and implement novel use of contrastive learning with CVAE's KL divergence loss function to more effectively characterize latent space of robot gaits."
     },
     {
       "company": "Northwestern Haptics Lab",
       "location": "Evanston, IL",
-      "position": "Computer Vision Researcher",
+      "position": "Robotics Researcher with Prof. Ed Colgate",
       "period": "12/2023 – 05/2024",
-      "details": "Lead developer on $500,000 NSF project to integrate computer vision with a VR-controlled dexterous robot testbed with robotic hands. Built a 6D pose estimation pipeline with PyTorch and ROS2 allowing real-time inferencing with a fisheye camera and VR headset."
+      "details": "Integrate computer vision with a VR-controlled dexterous robot testbed with robotic hands. Built a 6D pose estimation pipeline with PyTorch and ROS2 allowing real-time inferencing with a fisheye camera and VR headset."
     },
     {
       "company": "Stanford Microfluidics Lab",
       "location": "Stanford, CA",
-      "position": "Computer Vision Researcher",
+      "position": "Researcher with Prof. Juan Santiago",
       "period": "06/2024 – 10/2024",
       "details": "Developed physics-based computer vision molecule tracking algorithms for video analysis in Python and MATLAB, using spatial-temporal filtering and image processing techniques (median filtering and alpha shape thresholding) for the Bosch DNA image analysis project."
     },
     {
       "company": "Northwestern Integrated Design Automation Lab",
       "location": "Evanston, IL",
-      "position": "Machine Learning Researcher",
+      "position": "Machine Learning Researcher with Prof. Wei Chen",
       "period": "08/2023 – 09/2024",
       "details": "Co-authored peer-reviewed journal paper with Michelin Tires, published in the ASME Journal of Mechanical Design and presented at the ASME International Design Engineering Technical Conference (IDETC, 2024) to over 1000 industry engineers. Helped develop a digital twin model for vehicle tires to predict and optimize tire degradation, leading to reduced environmental waste for Michelin's fleet of 13 million trucks."
     },
     {
-      "company": "Hyphen (Chipotle Burrito Bowl Robot Startup)",
+      "company": "Hyphen (Chipotle Burrito Robot)",
       "location": "San Jose, CA",
       "position": "Robotics Systems Integration Engineer",
       "period": "06/2023 – 09/2023",

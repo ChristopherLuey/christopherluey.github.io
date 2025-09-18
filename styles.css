@@ -226,6 +226,37 @@ header h2 {
     letter-spacing: 0.05em;
 }
 
+/* Timeline Section Dividers */
+.timeline-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 92px 0 16px 0; /* tighter space above next card */
+    position: relative;
+    z-index: 3; /* place above curved svg path */
+}
+
+.timeline-divider .line {
+    flex: 1;
+    height: 1px;
+    background: #e9e9e9;
+}
+
+.timeline-divider .label {
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #8B4513;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    padding: 6px 6px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px); /* fuzz the background underneath label for readability */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
 .timeline-content-item h4 {
     font-size: 1.1em;
     color: #1a1a1a;
@@ -257,7 +288,7 @@ header h2 {
 }
 
 .timeline-content-item .period {
-    color: #ff6b35;
+    color: #8B4513;
     font-size: 0.85em;
     font-weight: 600;
     text-transform: uppercase;

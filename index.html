@@ -35,6 +35,27 @@
                 </svg>
                 
                 <!-- Dynamic education and experience items will be inserted here -->
+                <div class="timeline-divider" id="divider-education">
+                    <div class="line"></div>
+                    <div class="label">Education</div>
+                    <div class="line"></div>
+                </div>
+                <!-- Education items render here -->
+                <div id="education-anchor"></div>
+
+                <div class="timeline-divider" id="divider-research">
+                    <div class="line"></div>
+                    <div class="label">Research</div>
+                    <div class="line"></div>
+                </div>
+                <div id="research-anchor"></div>
+
+                <div class="timeline-divider" id="divider-industry">
+                    <div class="line"></div>
+                    <div class="label">Industry</div>
+                    <div class="line"></div>
+                </div>
+                <div id="industry-anchor"></div>
             </div>
         </div>
         
@@ -53,7 +74,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Load resume data from JSON file
-            fetch('resume.json')
+            fetch('resume.json?v=' + Date.now(), { cache: 'no-cache' })
                 .then(response => response.json())
                 .then(resumeData => {
                     // Create individual timeline items for education
@@ -117,7 +138,8 @@
         function createEducationTimelineItems(education) {
             const timelineContainer = document.querySelector('.timeline-container');
             
-            // Insert education items at the end of timeline
+            // Insert education items under divider, preserving array order
+            let anchor = document.getElementById('education-anchor');
             education.forEach((edu, index) => {
                 const timelineItem = document.createElement('div');
                 timelineItem.className = 'timeline-item';
@@ -140,14 +162,17 @@
                     </div>
                 `;
                 
-                timelineContainer.appendChild(timelineItem);
+                timelineContainer.insertBefore(timelineItem, anchor.nextSibling);
+                anchor = timelineItem; // move anchor forward so order is preserved
             });
         }
 
         function createExperienceTimelineItems(experiences) {
             const timelineContainer = document.querySelector('.timeline-container');
             
-            // Insert experience items at the end of timeline
+            // Insert experience items into Research/Industry sections preserving order per section
+            let researchAnchor = document.getElementById('research-anchor');
+            let industryAnchor = document.getElementById('industry-anchor');
             experiences.forEach((experience, index) => {
                 const timelineItem = document.createElement('div');
                 timelineItem.className = 'timeline-item';
@@ -170,7 +195,17 @@
                     </div>
                 `;
                 
-                timelineContainer.appendChild(timelineItem);
+                // naive split: first half research, second half industry based on keywords
+                const lower = `${experience.company} ${experience.position}`.toLowerCase();
+                const explicitCategory = (experience.category || '').toLowerCase();
+                const isResearch = explicitCategory === 'research' ? true : explicitCategory === 'industry' ? false : (lower.includes('research') || lower.includes('lab'));
+                if (isResearch) {
+                    timelineContainer.insertBefore(timelineItem, researchAnchor.nextSibling);
+                    researchAnchor = timelineItem;
+                } else {
+                    timelineContainer.insertBefore(timelineItem, industryAnchor.nextSibling);
+                    industryAnchor = timelineItem;
+                }
             });
         }
 
@@ -321,15 +356,17 @@
             const progPath = document.getElementById('timeline-path-progress');
             if (!progPath) return;
             const length = progPath.getTotalLength();
-            const viewportBottom = window.scrollY + window.innerHeight;
+            // Use a higher in-viewport anchor (e.g., 35% down the viewport)
+            const anchorY = window.scrollY + window.innerHeight * 0.65;
             const container = document.querySelector('.timeline-container');
             const containerTop = container.getBoundingClientRect().top + window.scrollY;
             const containerBottom = containerTop + container.offsetHeight;
 
-            const progress = Math.max(0, Math.min(1, (viewportBottom - containerTop) / (containerBottom - containerTop)));
+            // Progress based on anchor crossing the container height
+            const progress = Math.max(0, Math.min(1, (anchorY - containerTop) / (containerBottom - containerTop)));
 
             // No sticky interpolation; compute target every rAF for responsiveness
-            const eased = progress; // linear fill feels snappier while rAF throttled
+            const eased = progress; // keep linear for responsiveness
             const targetOffset = length * (1 - eased);
             progPath.style.strokeDasharray = `${length}`;
             progPath.style.strokeDashoffset = `${targetOffset}`;
