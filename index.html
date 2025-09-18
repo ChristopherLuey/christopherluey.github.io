@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christopher Luey</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="password-protection.js"></script>
+    <script>
+        // Simple test to see if password protection is working
+        console.log('Index.html loaded, checking password protection...');
+        setTimeout(() => {
+            console.log('Password protection initialized:', !!window.PasswordProtectionInitialized);
+            console.log('Logout button exists:', !!document.getElementById('logout-btn'));
+        }, 1000);
+    </script>
 </head>
 <body>
     <div class="container">
-        <h1>Christopher Luey</h1>
-        <h2>Projects and Research</h2>
+        <h1>CHRISTOPHER LUEY</h1>
         <div class="projects-grid" id="projects-grid"></div>
     </div>
     <script>
@@ -24,9 +32,11 @@
                         const projectElement = document.createElement('a');
                         projectElement.href = project.link;
                         projectElement.classList.add('project');
-                        const mediaContent = (project.media[0].endsWith('.mov') || project.media[0].endsWith('.mp4')) ? 
-                            `<video src="${project.media[0]}" autoplay muted playsinline loop></video>` : 
-                            `<img src="${project.media[0]}" alt="${project.title}">`;
+                        const mediaContent = (project.media && project.media.length > 0 && project.media[0]) ? 
+                            ((project.media[0].endsWith('.mov') || project.media[0].endsWith('.mp4')) ? 
+                                `<video src="${project.media[0]}" autoplay muted playsinline loop></video>` : 
+                                `<img src="${project.media[0]}" alt="${project.title}">`) :
+                            `<div class="no-media">No media available</div>`;
                         projectElement.innerHTML = `
                             ${mediaContent}
                             <h3>${project.title}</h3>
