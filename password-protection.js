@@ -128,17 +128,21 @@ class PasswordProtection {
     showContent() {
         console.log('showContent() called');
         
-        // Remove password prompt
+        // Remove password prompt with fade out animation
         const prompt = document.getElementById('password-prompt');
         if (prompt) {
-            prompt.remove();
-            console.log('Password prompt removed');
+            prompt.style.animation = 'fadeOut 0.5s ease-in-out forwards';
+            setTimeout(() => {
+                prompt.remove();
+                console.log('Password prompt removed');
+            }, 500);
         }
         
-        // Show main content
+        // Show main content with slide in animation
         const container = document.querySelector('.container');
         if (container) {
             container.style.display = 'block';
+            container.style.animation = 'slideInUp 0.8s ease-out';
             console.log('Container shown');
         }
         
@@ -154,8 +158,6 @@ class PasswordProtection {
         if (errorDiv) {
             errorDiv.textContent = message;
             errorDiv.style.display = 'block';
-            
-            // Hide error after 3 seconds
             setTimeout(() => {
                 errorDiv.style.display = 'none';
             }, 3000);
