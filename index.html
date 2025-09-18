@@ -18,10 +18,76 @@
 <body>
     <div class="container">
         <h1>CHRISTOPHER LUEY</h1>
-        <div class="projects-grid" id="projects-grid"></div>
+        
+        <!-- Resume Timeline Section -->
+        <div class="timeline-section" id="timeline-section">
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                <svg id="timeline-svg" class="timeline-svg" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="gradTimeline" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#ff6b35"/>
+                            <stop offset="100%" stop-color="#ff8c42"/>
+                        </linearGradient>
+                    </defs>
+                    <path id="timeline-path-base" class="timeline-path-base" d="" />
+                    <path id="timeline-path-progress" class="timeline-path-progress" d="" />
+                </svg>
+                
+                <!-- Dynamic education and experience items will be inserted here -->
+            </div>
+        </div>
+        
+        <!-- Projects Section -->
+        <div class="projects-section">
+            <h2>PORTFOLIO</h2>
+            <div class="projects-grid" id="projects-grid"></div>
+        </div>
+        
+        <!-- Skills Section -->
+        <div class="skills-section">
+            <h2>SKILLS</h2>
+            <div class="skills-container" id="skills-container"></div>
+        </div>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Load resume data from JSON file
+            fetch('resume.json')
+                .then(response => response.json())
+                .then(resumeData => {
+                    // Create individual timeline items for education
+                    createEducationTimelineItems(resumeData.education);
+                    
+                    // Create individual timeline items for each experience
+                    createExperienceTimelineItems(resumeData.experience);
+                    
+                    // Populate skills section at bottom
+                    populateSkillsSection(resumeData.skills);
+
+                    // Initialize scroll animations
+                    initScrollAnimations();
+
+                    // Build curved timeline path immediately and after layout settles
+                    buildCurvedTimelinePath();
+                    window.addEventListener('resize', buildCurvedTimelinePath);
+                    requestAnimationFrame(() => buildCurvedTimelinePath());
+                    setTimeout(buildCurvedTimelinePath, 250);
+                    observeDotTransitions();
+
+                    // Smooth fill update on scroll (rAF throttled)
+                    let rafId = null;
+                    window.addEventListener('scroll', () => {
+                        if (rafId) return;
+                        rafId = requestAnimationFrame(() => {
+                            animateTimelineProgress('scroll');
+                            rafId = null;
+                        });
+                    }, { passive: true });
+                })
+                .catch(error => console.error('Error loading resume data:', error));
+
+            // Load projects for portfolio section
             fetch('projects.json')
                 .then(response => response.json())
                 .then(data => {
@@ -47,6 +113,317 @@
                 })
                 .catch(error => console.error('Error loading projects:', error));
         });
+
+        function createEducationTimelineItems(education) {
+            const timelineContainer = document.querySelector('.timeline-container');
+            
+            // Insert education items at the end of timeline
+            education.forEach((edu, index) => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item';
+                timelineItem.setAttribute('data-year', edu.period.split('/')[1] || '2025');
+                
+                timelineItem.innerHTML = `
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <h3>${edu.institution}</h3>
+                            <div class="timeline-details">
+                                <div class="timeline-content-item">
+                                    <h4>${edu.degree}</h4>
+                                    <h5>${edu.location}</h5>
+                                    <p>${edu.details}</p>
+                                    <span class="period">${edu.period}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                timelineContainer.appendChild(timelineItem);
+            });
+        }
+
+        function createExperienceTimelineItems(experiences) {
+            const timelineContainer = document.querySelector('.timeline-container');
+            
+            // Insert experience items at the end of timeline
+            experiences.forEach((experience, index) => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item';
+                timelineItem.setAttribute('data-year', experience.period.split(' – ')[0].split('/')[1] || '2023');
+                
+                timelineItem.innerHTML = `
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <h3>${experience.company}</h3>
+                            <div class="timeline-details">
+                                <div class="timeline-content-item">
+                                    <h4>${experience.position}</h4>
+                                    <h5>${experience.location}</h5>
+                                    <p>${experience.details}</p>
+                                    <span class="period">${experience.period}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                timelineContainer.appendChild(timelineItem);
+            });
+        }
+
+        function populateSkillsSection(skills) {
+            const container = document.getElementById('skills-container');
+            
+            container.innerHTML = `
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming</h4>
+                        <div class="skill-tags">
+                            ${skills.programming.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Perception</h4>
+                        <div class="skill-tags">
+                            ${skills.perception.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>AI/ML & Deployment</h4>
+                        <div class="skill-tags">
+                            ${skills.ai_ml.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Robotics</h4>
+                        <div class="skill-tags">
+                            ${skills.robotics.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Hardware</h4>
+                        <div class="skill-tags">
+                            ${skills.hardware.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Courses</h4>
+                        <div class="skill-tags">
+                            ${skills.courses.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function populateTimelineSection(containerId, data, type) {
+            const container = document.getElementById(containerId);
+            
+            if (type === 'skills') {
+                // Special handling for skills section
+                container.innerHTML = `
+                    <div class="timeline-skills">
+                        <div class="skill-category">
+                            <h4>Programming</h4>
+                            <div class="skill-tags">
+                                ${data.programming.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Perception</h4>
+                            <div class="skill-tags">
+                                ${data.perception.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>AI/ML & Deployment</h4>
+                            <div class="skill-tags">
+                                ${data.ai_ml.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Robotics</h4>
+                            <div class="skill-tags">
+                                ${data.robotics.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Hardware</h4>
+                            <div class="skill-tags">
+                                ${data.hardware.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Courses</h4>
+                            <div class="skill-tags">
+                                ${data.courses.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'education') {
+                // Handle education array
+                container.innerHTML = data.map(item => `
+                    <div class="timeline-content-item">
+                        <h4>${item.institution}</h4>
+                        <h5>${item.location}</h5>
+                        <h6>${item.degree}</h6>
+                        <p>${item.details}</p>
+                        <span class="period">${item.period}</span>
+                    </div>
+                `).join('');
+            } else {
+                // Handle experience arrays
+                container.innerHTML = data.map(item => `
+                    <div class="timeline-content-item">
+                        <h4>${item.company}</h4>
+                        <h5>${item.location}</h5>
+                        <h6>${item.position}</h6>
+                        <p>${item.details}</p>
+                        <span class="period">${item.period}</span>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function initScrollAnimations() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        
+                        // Animate the timeline line progress
+                        const year = entry.target.dataset.year;
+                        animateTimelineProgress(year);
+                        // Rebuild the curved path after the dot scales in
+                        requestAnimationFrame(() => {
+                            buildCurvedTimelinePath();
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.3,
+                rootMargin: '0px 0px -100px 0px'
+            });
+
+            timelineItems.forEach(item => {
+                observer.observe(item);
+            });
+        }
+
+        function animateTimelineProgress(year) {
+            // Animate the SVG stroke drawing based on scroll position instead
+            const progPath = document.getElementById('timeline-path-progress');
+            if (!progPath) return;
+            const length = progPath.getTotalLength();
+            const viewportBottom = window.scrollY + window.innerHeight;
+            const container = document.querySelector('.timeline-container');
+            const containerTop = container.getBoundingClientRect().top + window.scrollY;
+            const containerBottom = containerTop + container.offsetHeight;
+
+            const progress = Math.max(0, Math.min(1, (viewportBottom - containerTop) / (containerBottom - containerTop)));
+
+            // No sticky interpolation; compute target every rAF for responsiveness
+            const eased = progress; // linear fill feels snappier while rAF throttled
+            const targetOffset = length * (1 - eased);
+            progPath.style.strokeDasharray = `${length}`;
+            progPath.style.strokeDashoffset = `${targetOffset}`;
+        }
+
+        function buildCurvedTimelinePath() {
+            const svg = document.getElementById('timeline-svg');
+            const basePath = document.getElementById('timeline-path-base');
+            const progPath = document.getElementById('timeline-path-progress');
+            const items = Array.from(document.querySelectorAll('.timeline-item'));
+            if (!svg || !basePath || !progPath || items.length === 0) return;
+
+            // Size SVG to container
+            const container = document.querySelector('.timeline-container');
+            const rect = container.getBoundingClientRect();
+            svg.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`);
+
+            const centerX = rect.width / 2;
+            const gap = parseInt(getComputedStyle(container).getPropertyValue('--timeline-gap')) || 28;
+            const dotOffset = parseInt(getComputedStyle(container).getPropertyValue('--dot-offset')) || 18;
+            const curveOffsetX = -12; // nudge entire curve a few px to the left for visual alignment
+
+            // Build path that goes down the center and curves to each item
+            let d = '';
+            let currentY = 0;
+            d += `M ${centerX} ${currentY}`;
+
+            // Helper to get element center relative to container WITHOUT transforms
+            function getCenterRel(el, containerEl) {
+                let x = 0;
+                let y = 0;
+                let node = el;
+                while (node && node !== containerEl) {
+                    x += node.offsetLeft;
+                    y += node.offsetTop;
+                    node = node.offsetParent;
+                }
+                return { cx: x + el.offsetWidth / 2, cy: y + el.offsetHeight / 2 };
+            }
+
+            // Collect control points for Catmull-Rom to Bezier conversion
+            const points = [];
+            items.forEach((item, idx) => {
+                const itemRect = item.getBoundingClientRect();
+                const itemTop = itemRect.top - rect.top; // relative to container
+                const dotEl = item.querySelector('.timeline-dot');
+                const { cx: dotX, cy: dotY } = getCenterRel(dotEl, container);
+                points.push({ x: dotX + curveOffsetX, y: dotY });
+            });
+            // End the curve exactly at the first dot; only add a bottom anchor to return to center
+            // Stop the curve a bit above the section divider to avoid overlap
+            const endSafeY = Math.max(rect.height - 140, points.length ? points[points.length-1].y + 40 : rect.height - 140);
+            const end = { x: centerX + curveOffsetX, y: endSafeY };
+            const controlPoints = [...points, end];
+
+            // Catmull-Rom to Bezier conversion for a smooth spline through all dots
+            function catmullRom2bezier(pts) {
+                let path = `M ${pts[0].x} ${pts[0].y}`;
+                for (let i = 0; i < pts.length - 1; i++) {
+                    const p0 = i === 0 ? pts[0] : pts[i - 1];
+                    const p1 = pts[i];
+                    const p2 = pts[i + 1];
+                    const p3 = i + 2 < pts.length ? pts[i + 2] : p2;
+                    const cp1x = p1.x + (p2.x - p0.x) / 6;
+                    const cp1y = p1.y + (p2.y - p0.y) / 6;
+                    const cp2x = p2.x - (p3.x - p1.x) / 6;
+                    const cp2y = p2.y - (p3.y - p1.y) / 6;
+                    path += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${p2.x} ${p2.y}`;
+                }
+                return path;
+            }
+
+            d = catmullRom2bezier(controlPoints);
+
+            basePath.setAttribute('d', d);
+            progPath.setAttribute('d', d);
+
+            // initialize dash for animation on progress path
+            const length = progPath.getTotalLength();
+            progPath.style.strokeDasharray = `${length}`;
+            progPath.style.strokeDashoffset = `${length}`;
+            animateTimelineProgress('init');
+        }
+
+        function observeDotTransitions() {
+            const dots = document.querySelectorAll('.timeline-dot');
+            dots.forEach(dot => {
+                dot.addEventListener('transitionend', (e) => {
+                    if (e.propertyName.includes('transform')) {
+                        buildCurvedTimelinePath();
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>
