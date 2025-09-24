@@ -10,7 +10,7 @@
 
 class PasswordProtection {
     constructor() {
-        this.password = 'luey'; // Change this to your desired password
+        this.password = 'luey'; // This will be replaced during build
         this.sessionKey = 'website_authenticated';
         this.sessionDuration = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
         

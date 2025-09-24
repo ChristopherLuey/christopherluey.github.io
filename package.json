@@ -1,0 +1,17 @@
+{
+  "name": "christopher-luey-website",
+  "version": "1.0.0",
+  "description": "Personal website with password protection",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "python -m http.server 8000"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {},
+  "keywords": ["website", "portfolio", "password-protection"],
+  "author": "Christopher Luey",
+  "license": "MIT"
+}
