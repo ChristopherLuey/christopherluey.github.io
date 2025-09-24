@@ -297,6 +297,44 @@ header h2 {
     margin-top: 8px;
 }
 
+/* Timeline Image Styling */
+.timeline-image {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.timeline-image img {
+    max-width: 100%;
+    max-height: 200px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.timeline-image video {
+    max-width: 100%;
+    max-height: 200px;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-image video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
 /* Skills Timeline Styles */
 .timeline-skills {
     display: flex;

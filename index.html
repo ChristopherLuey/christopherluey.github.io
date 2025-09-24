@@ -135,6 +135,16 @@
                 .catch(error => console.error('Error loading projects:', error));
         });
 
+        // Helper function to create appropriate media element (image or video)
+        function createMediaElement(path, alt) {
+            const isVideo = path.toLowerCase().match(/\.(mov|mp4|avi|webm|ogg)$/);
+            if (isVideo) {
+                return `<video src="${path}" autoplay muted loop playsinline><p>Your browser doesn't support HTML5 video. <a href="${path}">Download the video</a>.</p></video>`;
+            } else {
+                return `<img src="${path}" alt="${alt}">`;
+            }
+        }
+
         function createEducationTimelineItems(education) {
             const timelineContainer = document.querySelector('.timeline-container');
             
@@ -144,6 +154,10 @@
                 const timelineItem = document.createElement('div');
                 timelineItem.className = 'timeline-item';
                 timelineItem.setAttribute('data-year', edu.period.split('/')[1] || '2025');
+                
+                // Check if this entry has an associated image/video
+                const imageHTML = edu.image ? 
+                    `<div class="timeline-image">${createMediaElement(edu.image.path, edu.image.alt)}</div>` : '';
                 
                 timelineItem.innerHTML = `
                     <div class="timeline-dot"></div>
@@ -156,6 +170,7 @@
                                     <h5>${edu.location}</h5>
                                     <p>${edu.details}</p>
                                     <span class="period">${edu.period}</span>
+                                    ${imageHTML}
                                 </div>
                             </div>
                         </div>
@@ -178,6 +193,10 @@
                 timelineItem.className = 'timeline-item';
                 timelineItem.setAttribute('data-year', experience.period.split(' – ')[0].split('/')[1] || '2023');
                 
+                // Check if this entry has an associated image/video
+                const imageHTML = experience.image ? 
+                    `<div class="timeline-image">${createMediaElement(experience.image.path, experience.image.alt)}</div>` : '';
+                
                 timelineItem.innerHTML = `
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
@@ -189,6 +208,7 @@
                                     <h5>${experience.location}</h5>
                                     <p>${experience.details}</p>
                                     <span class="period">${experience.period}</span>
+                                    ${imageHTML}
                                 </div>
                             </div>
                         </div>
