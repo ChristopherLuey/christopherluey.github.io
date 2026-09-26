@@ -1,0 +1,47 @@
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#111;font:17px/1.6 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif}
+main{max-width:720px;margin:0 auto;padding:72px 24px 96px}
+h1{font-size:30px;margin:0 0 6px;letter-spacing:-.01em}
+.links{margin:0 0 36px;color:#555}
+a{color:#111;text-underline-offset:3px}
+p{margin:0 0 20px}
+ul{margin:-8px 0 20px;padding-left:20px}
+li{margin:0 0 4px}
+.ph{background:#fff4c2;padding:0 3px;border-radius:3px}
+.flag{background:#fff4c2}
+.acc{border-top:1px solid #e6e6e6;margin:0}
+.acc + p, .acc + .acc + p{margin-top:0}
+.acc:last-of-type{}
+.acc-head{all:unset;box-sizing:border-box;display:flex;gap:14px;align-items:flex-start;justify-content:space-between;width:100%;padding:12px 10px 12px 10px;cursor:pointer;border-radius:6px;transition:background .15s}
+.acc-head:hover,.hov .acc-head{background:#f5f5f5}
+.acc-head:hover .t,.hov .acc-head .t{text-decoration:underline;text-underline-offset:3px}
+.acc-head:focus-visible{outline:2px solid #111}
+.chev{flex:none;width:9px;height:9px;margin-top:9px;border-right:1.5px solid #777;border-bottom:1.5px solid #777;transform:rotate(45deg);transition:transform .25s}
+.open .chev{transform:rotate(225deg);margin-top:13px}
+.acc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}
+.open .acc-body{grid-template-rows:1fr}
+.instant .acc-body,.instant .chev{transition:none}
+.acc-inner{overflow:hidden;padding:0 10px}
+.open .acc-inner{padding-bottom:16px}
+.acc-inner img{display:block;width:100%;height:auto;border:1px solid #eee;border-radius:4px}
+.cap{font-size:14px;color:#555;margin:8px 0 0}
+.slot{border:1.5px dashed #c9c9c9;border-radius:6px;padding:28px 16px;text-align:center;color:#777;background:#fafafa}
+.slot small{font-size:13px}
+.p{display:flex;flex-direction:column}
+.t{font-weight:600}
+.a{font-size:15px;color:#333}
+.v{font-size:15px;color:#555}
+.acc-ok{color:#1a7f37;font-weight:600}
+.acc-group-end{border-top:1px solid #e6e6e6;margin-bottom:20px}
+@media (max-width:600px){body{font-size:16px}main{padding:44px 18px 64px}h1{font-size:26px}.acc-head{padding:12px 4px}.acc-inner{padding:0 4px}}
+
+/* Evidence is part of the prose, not a separate accordion row. */
+.evidence p{margin:0 0 12px}
+.evidence:last-of-type{margin-bottom:20px}
+.evidence-trigger{font:inherit;color:inherit;text-align:left;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-decoration-color:#aaa;text-decoration-thickness:1px;text-underline-offset:3px}
+.evidence-trigger:hover{background:#f5f5f5;text-decoration-color:#111}
+.evidence-trigger:focus-visible{outline:2px solid #111;outline-offset:3px}
+.evidence-mark{display:inline-block;color:#777;font-size:.75em;margin-left:5px;transition:transform .25s}
+.evidence.open .evidence-mark{transform:rotate(90deg)}
+.evidence .acc-inner{padding:0}
+.evidence.open .acc-inner{padding-bottom:16px}
