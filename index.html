@@ -1,486 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christopher Luey</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="password-protection.js"></script>
-    <script>
-        // Simple test to see if password protection is working
-        console.log('Index.html loaded, checking password protection...');
-        setTimeout(() => {
-            console.log('Password protection initialized:', !!window.PasswordProtectionInitialized);
-            console.log('Logout button exists:', !!document.getElementById('logout-btn'));
-        }, 1000);
-    </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Christopher Luey</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>CHRISTOPHER LUEY</h1>
-        
-        <!-- Resume Timeline Section -->
-        <div class="timeline-section" id="timeline-section">
-            <div class="timeline-container">
-                <div class="timeline-line"></div>
-                <svg id="timeline-svg" class="timeline-svg" preserveAspectRatio="none">
-                    <defs>
-                        <linearGradient id="gradTimeline" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stop-color="#ff6b35"/>
-                            <stop offset="100%" stop-color="#ff8c42"/>
-                        </linearGradient>
-                    </defs>
-                    <path id="timeline-path-base" class="timeline-path-base" d="" />
-                    <path id="timeline-path-progress" class="timeline-path-progress" d="" />
-                </svg>
-                
-                <!-- Dynamic education and experience items will be inserted here -->
-                <div class="timeline-divider" id="divider-education">
-                    <div class="line"></div>
-                    <div class="label">Education</div>
-                    <div class="line"></div>
-                </div>
-                <!-- Education items render here -->
-                <div id="education-anchor"></div>
+<main>
+<h1>Christopher Luey</h1>
+<p class="links"><a href="https://github.com/ChristopherLuey">GitHub</a> · <a href="#" class="ph">Email</a> · <a href="#" class="ph">LinkedIn</a> · <a href="#" class="ph">CV</a></p>
 
-                <div class="timeline-divider" id="divider-research">
-                    <div class="line"></div>
-                    <div class="label">Research</div>
-                    <div class="line"></div>
-                </div>
-                <div id="research-anchor"></div>
+<div class="evidence" id="mit">
+  <p><b>About.</b> People call me a workaholic and a perfectionist. Stubborn, too. They're not wrong. I'm a relentless operator - hyper efficient, AI native, and I don't let go of a problem until it's done right. <button class="evidence-trigger" aria-expanded="false" aria-controls="mit-body">I turned down an MIT MechE offer.<span class="evidence-mark" aria-hidden="true">↗</span></button></p>
+  <div class="acc-body" id="mit-body"><div class="acc-inner">
+    <div class="slot">Evidence image goes here<br><small>MIT MechE acceptance, April 2025 (letter from Prof. Giovanni Traverso). Send the screenshot you want shown.</small></div>
+  </div></div>
+</div>
+<div class="evidence" id="yc">
+  <p><button class="evidence-trigger" aria-expanded="false" aria-controls="yc-body">I turned down a Y Combinator W26 offer.<span class="evidence-mark" aria-hidden="true">↗</span></button></p>
+  <div class="acc-body" id="yc-body"><div class="acc-inner">
+    <div class="slot">Evidence image goes here<br><small>YC W26 offer. No offer letter found in the connected inboxes yet. Send the screenshot you want shown.</small></div>
+  </div></div>
+</div>
 
-                <div class="timeline-divider" id="divider-industry">
-                    <div class="line"></div>
-                    <div class="label">Industry</div>
-                    <div class="line"></div>
-                </div>
-                <div id="industry-anchor"></div>
-            </div>
-        </div>
-        
-        <!-- Projects Section -->
-        <div class="projects-section">
-            <h2>PORTFOLIO</h2>
-            <div class="projects-grid" id="projects-grid"></div>
-        </div>
-        
-        <!-- Skills Section -->
-        <div class="skills-section">
-            <h2>SKILLS</h2>
-            <div class="skills-container" id="skills-container"></div>
-        </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Load resume data from JSON file
-            fetch('resume.json?v=' + Date.now(), { cache: 'no-cache' })
-                .then(response => response.json())
-                .then(resumeData => {
-                    // Create individual timeline items for education
-                    createEducationTimelineItems(resumeData.education);
-                    
-                    // Create individual timeline items for each experience
-                    createExperienceTimelineItems(resumeData.experience);
-                    
-                    // Populate skills section at bottom
-                    populateSkillsSection(resumeData.skills);
+<p><b>People.</b> I have learned a great deal from friends and mentors, including Josiah Wong, Rochan Kavulli, Vatsalya Verma, Joseph Liu, Kenar Vyas, Wensi Ai, Ruohan Zhang, Karthik Dharmarajan, and Yalcin Tur.</p>
 
-                    // Initialize scroll animations
-                    initScrollAnimations();
+<p><b>Technical Depth and Research.</b> I work on robot learning and world models. I care about how robots can learn from the visual world and become useful outside the lab. Click a paper to see its figure.</p>
 
-                    // Build curved timeline path immediately and after layout settles
-                    buildCurvedTimelinePath();
-                    window.addEventListener('resize', buildCurvedTimelinePath);
-                    requestAnimationFrame(() => buildCurvedTimelinePath());
-                    setTimeout(buildCurvedTimelinePath, 250);
-                    observeDotTransitions();
+<div class="acc paper" id="i3l">
+  <button class="acc-head" aria-expanded="false" aria-controls="i3l-body">
+    <span class="p">
+      <span class="t">I3L: Iterative Interactive Imitation Learning for Whole-Body Mobile Manipulation</span>
+      <span class="a">Wensi Ai*, <b>Christopher Luey</b>*, Karthik Dharmarajan*, Evans Han, Yunfan Jiang, Stef Ren, Jianwen Xie, Jiajun Wu, Ruohan Zhang, Li Fei-Fei</span>
+      <span class="v">2027 IEEE International Conference on Robotics and Automation (ICRA), Seoul. Under review. <i>* Co-first authors.</i></span>
+    </span><span class="chev" aria-hidden="true"></span>
+  </button>
+  <div class="acc-body" id="i3l-body"><div class="acc-inner">
+    <div class="slot">Paper figure goes here<br><small>I3L has no public page yet. Add the teaser figure once it's on arXiv.</small></div>
+  </div></div>
+</div>
 
-                    // Smooth fill update on scroll (rAF throttled)
-                    let rafId = null;
-                    window.addEventListener('scroll', () => {
-                        if (rafId) return;
-                        rafId = requestAnimationFrame(() => {
-                            animateTimelineProgress('scroll');
-                            rafId = null;
-                        });
-                    }, { passive: true });
-                })
-                .catch(error => console.error('Error loading resume data:', error));
+<div class="acc paper" id="mva">
+  <button class="acc-head" aria-expanded="false" aria-controls="mva-body">
+    <span class="p">
+      <span class="t">Masked Visual Actions for Unified World Modeling</span>
+      <span class="a">Hadi Alzayer, Wenlong Huang, Haonan Chen, <b>Christopher Luey</b>, Lvmin Zhang, Maneesh Agrawala, Gordon Wetzstein, Li Fei-Fei, Yilun Du, Jiajun Wu, Jia-Bin Huang</span>
+      <span class="v">Conference on Neural Information Processing Systems (NeurIPS) 2026, Main Track. <span class="acc-ok">Accepted.</span></span>
+    </span><span class="chev" aria-hidden="true"></span>
+  </button>
+  <div class="acc-body" id="mva-body"><div class="acc-inner">
+    <img src="assets/img/mva_overview.png" alt="Masked Visual Actions overview figure">
+    <p class="cap">A pixel-space control interface that expresses action as a partially revealed trajectory in a video. <a href="https://arxiv.org/abs/2607.19343">arXiv</a> · <a href="https://masked-visual-actions.github.io/">Project page</a></p>
+  </div></div>
+</div>
 
-            // Load projects for portfolio section
-            fetch('projects.json')
-                .then(response => response.json())
-                .then(data => {
-                    const projectsGrid = document.getElementById('projects-grid');
+<div class="acc-group-end"></div>
 
-                    // Create project grid
-                    data.projects.forEach(project => {
-                        const projectElement = document.createElement('a');
-                        projectElement.href = project.link;
-                        projectElement.classList.add('project');
-                        const mediaContent = (project.media && project.media.length > 0 && project.media[0]) ? 
-                            ((project.media[0].endsWith('.mov') || project.media[0].endsWith('.mp4')) ? 
-                                `<video src="${project.media[0]}" autoplay muted playsinline loop></video>` : 
-                                `<img src="${project.media[0]}" alt="${project.title}">`) :
-                            `<div class="no-media">No media available</div>`;
-                        projectElement.innerHTML = `
-                            ${mediaContent}
-                            <h3>${project.title}</h3>
-                            <p>${project.description}</p>
-                        `;
-                        projectsGrid.appendChild(projectElement);
-                    });
-                })
-                .catch(error => console.error('Error loading projects:', error));
-        });
+<p><b>Building.</b> I co-founded Elytra Robotics with Rochan Kavulli. We built an autonomous mobile robot, and I worked across its design and engineering.</p>
 
-        // Helper function to create appropriate media element (image or video)
-        function createMediaElement(path, alt) {
-            const isVideo = path.toLowerCase().match(/\.(mov|mp4|avi|webm|ogg)$/);
-            if (isVideo) {
-                return `<video src="${path}" autoplay muted loop playsinline><p>Your browser doesn't support HTML5 video. <a href="${path}">Download the video</a>.</p></video>`;
-            } else {
-                return `<img src="${path}" alt="${alt}">`;
-            }
-        }
+<p><b>Investor.</b> I scout for 645 Ventures, V11, and Susa Ventures. I enjoy meeting people early, understanding what they are trying to build, and helping connect them with the right people. <span class="flag">I sourced Envalar, where 645 Ventures invested.</span></p>
 
-        function createEducationTimelineItems(education) {
-            const timelineContainer = document.querySelector('.timeline-container');
-            
-            // Insert education items under divider, preserving array order
-            let anchor = document.getElementById('education-anchor');
-            education.forEach((edu, index) => {
-                const timelineItem = document.createElement('div');
-                timelineItem.className = 'timeline-item';
-                timelineItem.setAttribute('data-year', edu.period.split('/')[1] || '2025');
-                
-                // Check if this entry has an associated image/video
-                const imageHTML = edu.image ? 
-                    `<div class="timeline-image">${createMediaElement(edu.image.path, edu.image.alt)}</div>` : '';
-                
-                timelineItem.innerHTML = `
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-card">
-                            <h3>${edu.institution}</h3>
-                            <div class="timeline-details">
-                                <div class="timeline-content-item">
-                                    <h4>${edu.degree}</h4>
-                                    <h5>${edu.location}</h5>
-                                    <p>${edu.details}</p>
-                                    <span class="period">${edu.period}</span>
-                                    ${imageHTML}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                timelineContainer.insertBefore(timelineItem, anchor.nextSibling);
-                anchor = timelineItem; // move anchor forward so order is preserved
-            });
-        }
+<p><b>Dinners.</b> I like bringing together people working on robotics and physical intelligence. I host small dinners where founders, researchers, and investors can get to know one another, including a V11 x Susa Ventures dinner and a V11 founder dinner series in the Bay Area.</p>
 
-        function createExperienceTimelineItems(experiences) {
-            const timelineContainer = document.querySelector('.timeline-container');
-            
-            // Insert experience items into Research/Industry sections preserving order per section
-            let researchAnchor = document.getElementById('research-anchor');
-            let industryAnchor = document.getElementById('industry-anchor');
-            experiences.forEach((experience, index) => {
-                const timelineItem = document.createElement('div');
-                timelineItem.className = 'timeline-item';
-                timelineItem.setAttribute('data-year', experience.period.split(' – ')[0].split('/')[1] || '2023');
-                
-                // Check if this entry has an associated image/video
-                const imageHTML = experience.image ? 
-                    `<div class="timeline-image">${createMediaElement(experience.image.path, experience.image.alt)}</div>` : '';
-                
-                timelineItem.innerHTML = `
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-card">
-                            <h3>${experience.company}</h3>
-                            <div class="timeline-details">
-                                <div class="timeline-content-item">
-                                    <h4>${experience.position}</h4>
-                                    <h5>${experience.location}</h5>
-                                    <p>${experience.details}</p>
-                                    <span class="period">${experience.period}</span>
-                                    ${imageHTML}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                // naive split: first half research, second half industry based on keywords
-                const lower = `${experience.company} ${experience.position}`.toLowerCase();
-                const explicitCategory = (experience.category || '').toLowerCase();
-                const isResearch = explicitCategory === 'research' ? true : explicitCategory === 'industry' ? false : (lower.includes('research') || lower.includes('lab'));
-                if (isResearch) {
-                    timelineContainer.insertBefore(timelineItem, researchAnchor.nextSibling);
-                    researchAnchor = timelineItem;
-                } else {
-                    timelineContainer.insertBefore(timelineItem, industryAnchor.nextSibling);
-                    industryAnchor = timelineItem;
-                }
-            });
-        }
+<p><b>Experience.</b></p>
+<ul>
+<li>Calder - <span class="ph">title</span>, June to September 2026.</li>
+<li>MIT Biomimetic Robotics Lab - researcher with Prof. Sangbae Kim.</li>
+<li>Innate Robotics - robotics engineer.</li>
+<li>K-Scale Labs - robotics engineering contractor. Won their humanoid robotics hackathon.</li>
+<li>Astranis - space flight software engineer.</li>
+<li>Tesla - vehicle software engineer.</li>
+<li>NASA Ames Research Center - computer vision researcher.</li>
+</ul>
+<p>I've also worked with teams on contract and helped friends building companies, including Build.ai, Human Archive, and Mercor.</p>
 
-        function populateSkillsSection(skills) {
-            const container = document.getElementById('skills-container');
-            
-            container.innerHTML = `
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Programming</h4>
-                        <div class="skill-tags">
-                            ${skills.programming.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Perception</h4>
-                        <div class="skill-tags">
-                            ${skills.perception.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>AI/ML & Deployment</h4>
-                        <div class="skill-tags">
-                            ${skills.ai_ml.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Robotics</h4>
-                        <div class="skill-tags">
-                            ${skills.robotics.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Hardware</h4>
-                        <div class="skill-tags">
-                            ${skills.hardware.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Courses</h4>
-                        <div class="skill-tags">
-                            ${skills.courses.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
+<p><b>Education.</b> Stanford University, M.S. in Mechanical Engineering, expected June 2027. NSF Graduate Research Fellow. Northwestern University, B.S. in Mechanical Engineering, concentration in Robotics and Controls, 2025.</p>
 
-        function populateTimelineSection(containerId, data, type) {
-            const container = document.getElementById(containerId);
-            
-            if (type === 'skills') {
-                // Special handling for skills section
-                container.innerHTML = `
-                    <div class="timeline-skills">
-                        <div class="skill-category">
-                            <h4>Programming</h4>
-                            <div class="skill-tags">
-                                ${data.programming.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Perception</h4>
-                            <div class="skill-tags">
-                                ${data.perception.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>AI/ML & Deployment</h4>
-                            <div class="skill-tags">
-                                ${data.ai_ml.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Robotics</h4>
-                            <div class="skill-tags">
-                                ${data.robotics.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Hardware</h4>
-                            <div class="skill-tags">
-                                ${data.hardware.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Courses</h4>
-                            <div class="skill-tags">
-                                ${data.courses.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
-                            </div>
-                        </div>
-                    </div>
-                `;
-            } else if (type === 'education') {
-                // Handle education array
-                container.innerHTML = data.map(item => `
-                    <div class="timeline-content-item">
-                        <h4>${item.institution}</h4>
-                        <h5>${item.location}</h5>
-                        <h6>${item.degree}</h6>
-                        <p>${item.details}</p>
-                        <span class="period">${item.period}</span>
-                    </div>
-                `).join('');
-            } else {
-                // Handle experience arrays
-                container.innerHTML = data.map(item => `
-                    <div class="timeline-content-item">
-                        <h4>${item.company}</h4>
-                        <h5>${item.location}</h5>
-                        <h6>${item.position}</h6>
-                        <p>${item.details}</p>
-                        <span class="period">${item.period}</span>
-                    </div>
-                `).join('');
-            }
-        }
-
-        function initScrollAnimations() {
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-in');
-                        
-                        // Animate the timeline line progress
-                        const year = entry.target.dataset.year;
-                        animateTimelineProgress(year);
-                        // Rebuild the curved path after the dot scales in
-                        requestAnimationFrame(() => {
-                            buildCurvedTimelinePath();
-                        });
-                    }
-                });
-            }, {
-                threshold: 0.3,
-                rootMargin: '0px 0px -100px 0px'
-            });
-
-            timelineItems.forEach(item => {
-                observer.observe(item);
-            });
-        }
-
-        function animateTimelineProgress(year) {
-            // Animate the SVG stroke drawing based on scroll position instead
-            const progPath = document.getElementById('timeline-path-progress');
-            if (!progPath) return;
-            const length = progPath.getTotalLength();
-            // Use a higher in-viewport anchor (e.g., 35% down the viewport)
-            const anchorY = window.scrollY + window.innerHeight * 0.65;
-            const container = document.querySelector('.timeline-container');
-            const containerTop = container.getBoundingClientRect().top + window.scrollY;
-            const containerBottom = containerTop + container.offsetHeight;
-
-            // Progress based on anchor crossing the container height
-            const progress = Math.max(0, Math.min(1, (anchorY - containerTop) / (containerBottom - containerTop)));
-
-            // No sticky interpolation; compute target every rAF for responsiveness
-            const eased = progress; // keep linear for responsiveness
-            const targetOffset = length * (1 - eased);
-            progPath.style.strokeDasharray = `${length}`;
-            progPath.style.strokeDashoffset = `${targetOffset}`;
-        }
-
-        function buildCurvedTimelinePath() {
-            const svg = document.getElementById('timeline-svg');
-            const basePath = document.getElementById('timeline-path-base');
-            const progPath = document.getElementById('timeline-path-progress');
-            const items = Array.from(document.querySelectorAll('.timeline-item'));
-            if (!svg || !basePath || !progPath || items.length === 0) return;
-
-            // Size SVG to container
-            const container = document.querySelector('.timeline-container');
-            const rect = container.getBoundingClientRect();
-            svg.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`);
-
-            const centerX = rect.width / 2;
-            const gap = parseInt(getComputedStyle(container).getPropertyValue('--timeline-gap')) || 28;
-            const dotOffset = parseInt(getComputedStyle(container).getPropertyValue('--dot-offset')) || 18;
-            const curveOffsetX = -12; // nudge entire curve a few px to the left for visual alignment
-
-            // Build path that goes down the center and curves to each item
-            let d = '';
-            let currentY = 0;
-            d += `M ${centerX} ${currentY}`;
-
-            // Helper to get element center relative to container WITHOUT transforms
-            function getCenterRel(el, containerEl) {
-                let x = 0;
-                let y = 0;
-                let node = el;
-                while (node && node !== containerEl) {
-                    x += node.offsetLeft;
-                    y += node.offsetTop;
-                    node = node.offsetParent;
-                }
-                return { cx: x + el.offsetWidth / 2, cy: y + el.offsetHeight / 2 };
-            }
-
-            // Collect control points for Catmull-Rom to Bezier conversion
-            const points = [];
-            items.forEach((item, idx) => {
-                const itemRect = item.getBoundingClientRect();
-                const itemTop = itemRect.top - rect.top; // relative to container
-                const dotEl = item.querySelector('.timeline-dot');
-                const { cx: dotX, cy: dotY } = getCenterRel(dotEl, container);
-                points.push({ x: dotX + curveOffsetX, y: dotY });
-            });
-            // End the curve exactly at the first dot; only add a bottom anchor to return to center
-            // Stop the curve a bit above the section divider to avoid overlap
-            const endSafeY = Math.max(rect.height - 140, points.length ? points[points.length-1].y + 40 : rect.height - 140);
-            const end = { x: centerX + curveOffsetX, y: endSafeY };
-            const controlPoints = [...points, end];
-
-            // Catmull-Rom to Bezier conversion for a smooth spline through all dots
-            function catmullRom2bezier(pts) {
-                let path = `M ${pts[0].x} ${pts[0].y}`;
-                for (let i = 0; i < pts.length - 1; i++) {
-                    const p0 = i === 0 ? pts[0] : pts[i - 1];
-                    const p1 = pts[i];
-                    const p2 = pts[i + 1];
-                    const p3 = i + 2 < pts.length ? pts[i + 2] : p2;
-                    const cp1x = p1.x + (p2.x - p0.x) / 6;
-                    const cp1y = p1.y + (p2.y - p0.y) / 6;
-                    const cp2x = p2.x - (p3.x - p1.x) / 6;
-                    const cp2y = p2.y - (p3.y - p1.y) / 6;
-                    path += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${p2.x} ${p2.y}`;
-                }
-                return path;
-            }
-
-            d = catmullRom2bezier(controlPoints);
-
-            basePath.setAttribute('d', d);
-            progPath.setAttribute('d', d);
-
-            // initialize dash for animation on progress path
-            const length = progPath.getTotalLength();
-            progPath.style.strokeDasharray = `${length}`;
-            progPath.style.strokeDashoffset = `${length}`;
-            animateTimelineProgress('init');
-        }
-
-        function observeDotTransitions() {
-            const dots = document.querySelectorAll('.timeline-dot');
-            dots.forEach(dot => {
-                dot.addEventListener('transitionend', (e) => {
-                    if (e.propertyName.includes('transform')) {
-                        buildCurvedTimelinePath();
-                    }
-                });
-            });
-        }
-    </script>
+<p><b>Contact.</b> <span class="ph">email</span></p>
+</main>
+<script>
+document.querySelectorAll('.acc-head, .evidence-trigger').forEach(function(b){
+  b.addEventListener('click', function(){
+    var open = b.getAttribute('aria-expanded') === 'true';
+    b.setAttribute('aria-expanded', String(!open));
+    b.closest('.evidence, .acc').classList.toggle('open', !open);
+  });
+});
+var q = new URLSearchParams(location.search).get('open');
+if (q) q.split(',').forEach(function(id){ var e=document.getElementById(id); if(e){ e.classList.add('open','instant'); e.querySelector('.acc-head, .evidence-trigger').setAttribute('aria-expanded','true'); }});
+if (new URLSearchParams(location.search).get('hover')) document.getElementById(new URLSearchParams(location.search).get('hover')).classList.add('hov');
+</script>
 </body>
 </html>
