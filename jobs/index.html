@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jobs · Christopher Luey</title>
+<meta name="description" content="Hire through Christopher Luey’s Stanford, MIT, and broader network. Post your role and set a referral bonus to connect with exceptional people.">
+<meta name="theme-color" content="#faf9f6">
+<link rel="canonical" href="https://christopherluey.github.io/jobs/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css?v=filter-arrows-14">
+<script src="sharing.js?v=referral-sharing-12" defer></script>
+<script src="app.js?v=referral-sharing-12" defer></script>
+<script src="referral-form.js?v=compact-referrals-13" defer></script>
+<script src="employers.js?v=referral-sharing-12" defer></script>
+</head>
+<body>
+<a class="skip" href="#board">Skip to jobs</a>
+<main>
+<header>
+<h1>Jobs</h1>
+<nav class="links" aria-label="Main navigation"><a href="../" target="_blank" rel="noopener">Christopher Luey</a> · <a href="mailto:luey@alumni.stanford.edu">Email</a> · <button class="text-button" data-dialog="how">How it works</button></nav>
+<p>Build your team with some of the smartest people I know from Stanford, MIT, and beyond. Post your role and set a referral bonus to hire through trusted introductions.</p>
+<div class="audiences" aria-label="Ways to use the board">
+<section class="audience audience-employer" aria-labelledby="employer-heading">
+<h2 id="employer-heading">For employers</h2>
+<p>Post one or several roles. Add salaries and referral bonuses.</p>
+<button class="primary audience-action" data-post-job>Post a job <span aria-hidden="true">↗</span></button>
+</section>
+<section class="audience" aria-labelledby="seeker-heading">
+<h2 id="seeker-heading">For job seekers</h2>
+<p>Find your next team through a trusted introduction.</p>
+<a class="text-button audience-action" href="#board">Explore roles <span aria-hidden="true">→</span></a>
+</section>
+<section class="audience" aria-labelledby="referrer-heading">
+<h2 id="referrer-heading">For referrers</h2>
+<p>Introduce someone great. Earn a referral bonus.</p>
+<button class="text-button audience-action" data-refer="">Refer someone <span aria-hidden="true">→</span></button>
+</section>
+</div>
+</header>
+<section id="board" class="board" aria-labelledby="board-heading">
+<div class="board-heading"><h2 id="board-heading">Open roles.</h2><span id="result-count" role="status">Loading roles…</span></div>
+<div class="filters">
+<div class="multi-filter"><span id="category-label">Company categories</span><details id="category" class="filter-menu"><summary aria-describedby="category-label">All categories</summary><fieldset><legend class="sr-only">Company categories</legend><p class="field-hint">Select all that apply.</p><div class="filter-options"></div></fieldset></details></div>
+<div class="multi-filter"><span id="roleType-label">Role types</span><details id="roleType" class="filter-menu"><summary aria-describedby="roleType-label">All roles</summary><fieldset><legend class="sr-only">Role types</legend><p class="field-hint">Select all that apply.</p><div class="filter-options"></div></fieldset></details></div>
+<label><span>Seniority</span><select id="seniority"><option value="">All seniority</option></select></label>
+<label><span>Workplace</span><select id="location"><option value="">Any workplace</option></select></label>
+</div>
+<div id="jobs" class="jobs"></div>
+<p id="empty" class="empty" hidden>No roles match those filters. <button id="clear-filters" class="text-button">Clear filters</button></p>
+<p class="open-intro">Know someone great for a different role? <button class="text-button" data-refer="">Make an open introduction</button>.</p>
+<p class="board-note" id="board-note">Employers pay referral bonuses directly under each role’s terms. Bonus amounts are shown once confirmed.</p>
+<noscript><p>Enable JavaScript to filter roles and send a referral. Or <a href="mailto:luey@alumni.stanford.edu">email Christopher</a>.</p></noscript>
+</section>
+<section class="faq" aria-labelledby="faq-heading">
+<h2 id="faq-heading">Questions.</h2>
+<details><summary>How do I post a job?</summary><p><button class="text-button" data-post-job>Submit up to 10 opportunities at once</button>, each with its own salary, referral bonus, eligibility rules, and payout timing. Christopher reviews each posting before it goes live. Your contact details remain private.</p></details>
+<details><summary>Can I put myself forward?</summary><p>Yes. Open a role and choose “I’m interested.” A referral bonus is for an eligible referrer; applying yourself does not automatically qualify.</p></details>
+<details><summary>What happens after an introduction?</summary><p>Your note goes to my private inbox. I’ll review the fit and can follow up by email. An introduction or interview isn’t guaranteed.</p></details>
+<details><summary>How do referral bonuses work?</summary><p>Employers pay referrers directly. Each bonus-backed role lists the amount, who qualifies, and what must happen before payment. Read those terms before making a referral. A submission alone does not earn a bonus. Listings marked “Bonus to be confirmed” do not yet have a confirmed bonus offer.</p></details>
+<details><summary>How do I share a referral link?</summary><p>Open a role and choose “Share referral link.” Add your name and email or phone, then copy your personal link. Anyone who applies through it is connected to you in Christopher’s private inbox. You can send the same link to several people.</p></details><details><summary>Can I refer more than one person?</summary><p>Yes. Share your link with each person, or send separate introductions with their permission.</p></details>
+<details><summary>Who posts the roles?</summary><p>I handpick roles from founders and teams in my network. Employers can also submit roles and bonus terms for review.</p></details>
+</section>
+<footer><a href="../" target="_blank" rel="noopener">Christopher Luey</a><button class="text-button" data-dialog="privacy">Privacy</button></footer>
+</main>
+<dialog id="modal" aria-labelledby="modal-title"><div class="modal-inner"><button id="close-modal" class="close" aria-label="Close dialog">×</button><div id="modal-content"></div></div></dialog>
+<div id="toast" role="status" class="toast" hidden></div>
+</body>
+</html>

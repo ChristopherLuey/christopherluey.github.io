@@ -1,0 +1,30 @@
+{
+  "updated": "2026-10-14",
+  "jobs": [
+    {
+      "id": "synphony-robotics",
+      "title": "Robotics Engineer",
+      "company": "Synphony",
+      "category": "Robotics",
+      "roleType": "Robotics Engineer",
+      "seniority": "Experience-based",
+      "location": "On-site",
+      "salary": "",
+      "url": "https://www.synphony.co/#careers",
+      "source": "curated",
+      "listingLabel": "From my network",
+      "bonus": {
+        "amount": 10000,
+        "currency": "USD",
+        "terms": "Paid directly by Synphony. Contact Christopher to confirm eligibility and payout timing."
+      },
+      "description": "Synphony’s Forward Deployed Robotics Engineer role owns robot deployments from customer scoping and data collection through learned policies, controls, integration, and reliable operation in the field.",
+      "requirements": [
+        "Experience deploying learned policies on physical robots, with strong ML fundamentals.",
+        "Hands-on robotics integration: sensors, calibration, controls, and ROS or robot SDKs.",
+        "Work across imitation learning, reinforcement learning, VLA fine-tuning, and simulation-to-reality evaluation.",
+        "Customer-facing ownership of robot deployments in industrial settings."
+      ]
+    }
+  ]
+}

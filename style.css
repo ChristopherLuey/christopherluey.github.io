@@ -1,0 +1,109 @@
+/* Personal homepage: quiet typography with inline, expandable evidence. */
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #292824;
+  background: #faf9f6;
+  font-synthesis: none;
+  --accent: #87502d;
+  --muted: #706c64;
+  --line: #dedbd3;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-size: 17px; line-height: 1.7; }
+main { max-width: 1440px; margin: 0 auto; padding: 32px 32px 80px; }
+h1 { margin: 0 0 6px; font-size: clamp(32px, 5vw, 40px); font-weight: 500; line-height: 1.2; letter-spacing: -1.2px; }
+p { margin: 0 0 22px; }
+b { font-weight: 700; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: #492912; }
+.links { margin: 12px 0 38px; font-size: 15px; color: #aaa498; }
+.links a { margin: 0 3px; }
+.links a:first-child { margin-left: 0; }
+.ph { color: var(--muted); }
+ul { padding-left: 23px; margin: -10px 0 22px; }
+li { padding-left: 3px; margin: 5px 0; }
+button { font: inherit; color: inherit; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+.evidence-trigger { display: inline; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; color: var(--accent); text-decoration: underline; text-decoration-color: #bb9d83; text-decoration-style: dotted; text-underline-offset: 4px; }
+.evidence-trigger:hover, .hov .evidence-trigger { text-decoration-style: solid; color: #492912; }
+.evidence-mark { display: inline-block; font-family: system-ui, sans-serif; font-size: 12px; margin-left: 4px; text-decoration: none; transition: transform 180ms ease; }
+.open .evidence-mark { transform: rotate(90deg); }
+.acc-body { display: none; }
+.open > .acc-body { display: block; }
+.acc-inner { padding: 0 0 22px; }
+.slot { padding: 28px 24px; border: 1px dashed #c9c3b8; background: #f2f0eb; text-align: center; color: var(--muted); font-family: system-ui, sans-serif; font-size: 14px; border-radius: 4px; }
+.slot small { display: inline-block; max-width: 490px; margin-top: 8px; font-size: 12px; line-height: 1.6; }
+.paper { margin-inline-start: 26px; border-top: 1px solid var(--line); }
+.paper + .paper { border-bottom: 1px solid var(--line); }
+.acc-head { display: flex; align-items: flex-start; gap: 20px; width: 100%; text-align: left; background: none; border: 0; padding: 20px 0; cursor: pointer; }
+.acc-head:hover .t, .hov .t { color: var(--accent); }
+.p { flex: 1; min-width: 0; }
+.t, .a, .v { display: block; }
+.t { font-weight: 700; font-size: 17px; line-height: 1.5; margin-bottom: 7px; }
+.a, .v { font-family: system-ui, sans-serif; font-size: 12px; line-height: 1.65; color: var(--muted); }
+.v { margin-top: 6px; }
+.acc-ok { color: #396141; }
+.chev { flex: 0 0 7px; width: 7px; height: 7px; margin: 8px 3px 0 0; border-right: 1px solid var(--muted); border-bottom: 1px solid var(--muted); transform: rotate(45deg); transition: transform 180ms ease; }
+.open .chev { transform: rotate(225deg); }
+.acc-inner img { display: block; max-width: 100%; height: auto; margin: 0 auto; border-radius: 3px; }
+.cap { font-family: system-ui, sans-serif; font-size: 12px; line-height: 1.65; color: var(--muted); margin: 12px 0 0; }
+.acc-group-end { height: 28px; }
+.flag { text-decoration: underline; text-decoration-color: #d1b696; text-underline-offset: 4px; }
+@media (max-width: 540px) {
+  body { font-size: 16px; }
+  main { padding: 16px 16px 56px; }
+  .links { margin-bottom: 30px; }
+  .acc-head { gap: 12px; }
+  .slot { padding: 22px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
+
+/* People and places as a narrative of shared work. */
+.people-places { margin-bottom: 30px; }
+.people-places h2 { margin: 0 0 8px; font-size: 1em; line-height: inherit; }
+.people-places p { margin-bottom: 18px; }
+.dinner-list { margin: -10px 0 22px; margin-inline-start: 26px; }
+.dinner { border-top: 1px solid var(--line); padding: 10px 0; }
+.dinner:last-child { border-bottom: 1px solid var(--line); }
+.dinner summary { cursor: pointer; color: var(--accent); font-size: 15px; line-height: 1.5; }
+.dinner summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.dinner-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; max-width: 640px; }
+.dinner-photos img { display: block; width: 100%; height: 220px; object-fit: contain; background: #f2f0eb; border-radius: 3px; }
+.dinner .cap { margin: 8px 0 2px; }
+@media (max-width: 540px) {
+  .dinner summary { font-size: 14px; }
+  .dinner-photos { gap: 8px; margin-top: 10px; }
+  .dinner-photos img { height: 140px; }
+}
+.links a { white-space: nowrap; }
+.letter-evidence { width: 340px; max-width: 100%; margin: 0; }
+.letter-evidence > a { display: block; }
+.letter-evidence img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: 3px; }
+.letter-evidence .cap { margin-top: 8px; }
+@media (max-width: 540px) {
+  .letter-evidence { width: 300px; }
+}
+.yc-evidence { width: 640px; max-width: 100%; }
+
+.research-figure { display: block; width: fit-content; max-width: 100%; margin: 0 0 14px; }
+.research-figure img { width: auto; max-width: 100%; max-height: 460px; object-fit: contain; }
+@media (max-width: 540px) { .research-figure img { max-height: 300px; } }
+
+/* Dates stay visible when event photos are collapsed. */
+.event-date { display: block; color: var(--muted); font-size: 12px; line-height: 1.65; }
+.dinner .event-date, .hackathon .event-date { margin-top: 3px; }
+.event-list { list-style: none; }
+.hackathon { margin: 0; font-size: 15px; line-height: 1.5; }
+.event-description { position: relative; }
+.event-description::before { content: ''; position: absolute; inset-inline-start: -17px; top: .75em; width: .24em; height: .24em; border-radius: 50%; background: currentColor; transform: translateY(-50%); }
+.hackathon + .hackathon { margin-top: 2px; }
+
+@media (max-width: 540px) { .hackathon { font-size: 14px; } }
+
+/* Public aggregate counter; detailed analytics stays in the private dashboard. */
+.site-footer { margin-top: 42px; padding-top: 22px; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.site-footer noscript { display: block; }
+
