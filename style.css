@@ -110,4 +110,24 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 
 .contact-photo { display: block; width: 640px; max-width: 100%; height: auto; margin: 0; border-radius: 3px; }
 
-.paper .workshop-venues { margin: -8px 0 20px; }
+/* Keep workshop recognition compact; show full linked titles on demand. */
+.workshop-venues { max-width: 640px; margin: -8px 0 18px; font-size: 13px; line-height: 1.5; }
+.workshop-venues summary { display: flex; align-items: flex-start; gap: 9px; min-height: 44px; padding: 5px 0; list-style: none; cursor: pointer; }
+.workshop-venues summary::-webkit-details-marker { display: none; }
+.workshop-venues summary::before { content: ''; flex: 0 0 6px; width: 6px; height: 6px; margin: 6px 2px 0 1px; border-right: 1px solid var(--accent); border-bottom: 1px solid var(--accent); transform: rotate(-45deg); }
+.workshop-venues[open] summary::before { transform: rotate(45deg); }
+.workshop-venues summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+.workshop-summary { min-width: 0; }
+.workshop-heading { display: block; font-weight: 600; color: #396141; }
+.workshop-highlights { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; }
+.workshop-content { padding: 6px 0 0 18px; }
+.workshop-date { margin: 0 0 6px; color: var(--muted); font-size: 12px; }
+.workshop-list { list-style: none; margin: 0; padding: 0; }
+.workshop-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; margin: 0; padding: 8px 0; border-top: 1px solid var(--line); }
+.workshop-list a { width: fit-content; max-width: 100%; font-weight: 500; overflow-wrap: anywhere; }
+.workshop-presentation { color: #396141; font-size: 11px; font-weight: 500; align-self: baseline; }
+.workshop-description { grid-column: 1 / -1; color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+@media (max-width: 540px) {
+  .workshop-content { padding-left: 0; }
+  .workshop-list li { gap: 2px 8px; }
+}
