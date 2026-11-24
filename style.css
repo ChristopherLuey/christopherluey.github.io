@@ -110,16 +110,19 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 
 .contact-photo { display: block; width: 640px; max-width: 100%; height: auto; margin: 0; border-radius: 3px; }
 
-/* Workshop recognition follows the paper's compact typographic style. */
-.workshop-recognition { max-width: 720px; margin: -6px 0 20px; font-size: 13px; line-height: 1.5; }
-.workshop-award { margin: 0 0 10px; }
-.workshop-award strong { display: block; color: var(--accent); font-size: 14px; font-weight: 650; }
-.workshop-award > span { display: block; margin-top: 2px; color: var(--muted); font-size: 12px; }
-.workshop-label { margin: 0 0 5px; color: var(--muted); font-size: 12px; }
-.workshop-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px 18px; list-style: none; margin: 0; padding: 0; }
-.workshop-list li { display: flex; flex-wrap: wrap; align-content: flex-start; align-items: baseline; gap: 0 5px; min-width: 0; margin: 0; padding: 0; }
-.workshop-list a { max-width: 100%; padding: 2px 0; font-weight: 500; overflow-wrap: anywhere; }
-.workshop-format { color: var(--muted); font-size: 11px; line-height: 1.8; }
-@media (min-width: 760px) {
-  .workshop-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+/* Workshop honors stay attached to their venue within the paper entry. */
+.workshop-recognition { margin: -6px 0 20px; font-size: .875rem; line-height: 1.5; }
+.workshop-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; margin: 0 0 8px; font-size: .8125rem; }
+.workshop-heading b { font-weight: 600; }
+.workshop-heading > span { color: var(--muted); font-size: .75rem; }
+.workshop-heading > span::before { content: '\00b7'; margin-inline-end: 8px; }
+.workshop-list { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px; list-style: none; margin: 0; padding: 0; }
+.workshop-list li, .workshop-venue { display: flex; flex-wrap: wrap; align-items: baseline; gap: 3px 8px; min-width: 0; max-width: 100%; margin: 0; padding: 0; }
+.workshop-list a { padding: 2px 0; max-width: 100%; overflow-wrap: anywhere; }
+.workshop-list .workshop-featured { flex-basis: 100%; column-gap: 16px; margin-bottom: 2px; }
+.workshop-format { color: var(--muted); font-size: .75rem; }
+.workshop-award { color: var(--accent); font-size: .8125rem; font-weight: 650; }
+@media (max-width: 540px) {
+  .workshop-list { column-gap: 16px; }
+  .workshop-award { flex-basis: 100%; }
 }
