@@ -111,7 +111,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .contact-photo { display: block; width: 640px; max-width: 100%; height: auto; margin: 0; border-radius: 3px; }
 
 /* Full workshop titles form a compact list within the publication. */
-.workshop-recognition { max-width: 56rem; margin: -6px 0 20px; font-size: .875rem; line-height: 1.5; }
+.workshop-recognition { max-width: 56rem; margin: -6px 0 20px; margin-inline-start: 1rem; font-size: .875rem; line-height: 1.5; }
 .workshop-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 3px 16px; margin: 0 0 8px; font-size: .8125rem; }
 .workshop-heading b { font-weight: 600; }
 .workshop-heading > span { color: var(--muted); font-size: .75rem; }
@@ -125,6 +125,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .workshop-notes strong { color: var(--accent); font-size: .8125rem; font-weight: 650; }
 .workshop-notes strong + span::before { content: '\00b7'; margin-inline-end: 8px; }
 @media (max-width: 700px) {
+  .workshop-recognition { margin-inline-start: .5rem; }
   .workshop-heading { display: block; }
   .workshop-heading > span { display: block; margin-top: 2px; }
   .workshop-list li { grid-template-columns: minmax(0, 1fr); }
